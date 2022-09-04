@@ -15,7 +15,6 @@ struct GeneralView: View {
                     LibraryView()
                         .toolbar {
                             EditButton()
-//                                .tint(.red)
                         }
                 }
                 .tabItem {
@@ -40,8 +39,6 @@ struct GeneralView: View {
                 }
 
             }
-//            .tint(.red)
-//            .accentColor(.red)
         }
     }
 }
