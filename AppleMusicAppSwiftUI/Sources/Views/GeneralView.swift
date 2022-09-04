@@ -8,6 +8,11 @@
 import SwiftUI
 
 struct GeneralView: View {
+
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor.secondarySystemBackground
+    }
+
     var body: some View {
         ZStack {
             TabView {
