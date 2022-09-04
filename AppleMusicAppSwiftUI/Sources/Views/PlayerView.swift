@@ -62,6 +62,6 @@ struct PlayerView: View {
 struct PlayerView_Previews: PreviewProvider {
     static var previews: some View {
         PlayerView()
-//            .previewLayout(.fixed(width: 400, height: 100))
+            .previewLayout(.fixed(width: 400, height: 100))
     }
 }

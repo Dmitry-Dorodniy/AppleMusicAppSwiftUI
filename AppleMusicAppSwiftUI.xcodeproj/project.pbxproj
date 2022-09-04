@@ -13,6 +13,8 @@
 		8A3F35E128C4B14A006B3892 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A3F35E028C4B14A006B3892 /* Preview Assets.xcassets */; };
 		8A3F35EC28C4DE86006B3892 /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3F35EB28C4DE86006B3892 /* GeneralView.swift */; };
 		8A3F35EE28C4F8D3006B3892 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3F35ED28C4F8D3006B3892 /* PlayerView.swift */; };
+		8A92ACAF28C516AB00ADE1B2 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A92ACAE28C516AB00ADE1B2 /* ListModel.swift */; };
+		8A92ACB128C516D700ADE1B2 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A92ACB028C516D700ADE1B2 /* ListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		8A3F35E028C4B14A006B3892 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8A3F35EB28C4DE86006B3892 /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		8A3F35ED28C4F8D3006B3892 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		8A92ACAE28C516AB00ADE1B2 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
+		8A92ACB028C516D700ADE1B2 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 			isa = PBXGroup;
 			children = (
 				8A3F35EB28C4DE86006B3892 /* GeneralView.swift */,
+				8A92ACAE28C516AB00ADE1B2 /* ListModel.swift */,
+				8A92ACB028C516D700ADE1B2 /* ListView.swift */,
 				8A3F35ED28C4F8D3006B3892 /* PlayerView.swift */,
 				8A3F35DB28C4B149006B3892 /* LibraryView.swift */,
 			);
@@ -177,8 +183,10 @@
 			files = (
 				8A3F35EC28C4DE86006B3892 /* GeneralView.swift in Sources */,
 				8A3F35DC28C4B149006B3892 /* LibraryView.swift in Sources */,
+				8A92ACB128C516D700ADE1B2 /* ListView.swift in Sources */,
 				8A3F35DA28C4B149006B3892 /* AppleMusicAppSwiftUIApp.swift in Sources */,
 				8A3F35EE28C4F8D3006B3892 /* PlayerView.swift in Sources */,
+				8A92ACAF28C516AB00ADE1B2 /* ListModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,6 @@ struct GeneralView: View {
     }
 
     var body: some View {
-        VStack {
             ZStack {
                 TabView {
                     NavigationView {
@@ -46,10 +45,9 @@ struct GeneralView: View {
 
                 }
                 PlayerView()
-                    .offset(y: 200)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
+                    .offset(y: -45)
             }
-
-        }
 
     }
 }
