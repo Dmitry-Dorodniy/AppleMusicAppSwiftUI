@@ -14,37 +14,43 @@ struct GeneralView: View {
     }
 
     var body: some View {
-        ZStack {
-            TabView {
-                NavigationView {
-                    LibraryView()
-                        .toolbar {
-                            EditButton()
-                        }
-                }
-                .tabItem {
-                    Text("Library")
-                    Image("note")
-                        .renderingMode(.template)
+        VStack {
+            ZStack {
+                TabView {
+                    NavigationView {
+                        LibraryView()
+                            .toolbar {
+                                EditButton()
+                            }
+                    }
+                    .tabItem {
+                        Text("Library")
+                        Image("note")
+                            .renderingMode(.template)
 
-                }
+                    }
 
-                Text("RadioView")
-                .tabItem {
-                    Text("Radio")
-                    Image(systemName:"dot.radiowaves.left.and.right")
-                }
+                    Text("RadioView")
+                    .tabItem {
+                        Text("Radio")
+                        Image(systemName:"dot.radiowaves.left.and.right")
+                    }
 
-                Text("Search")
-                .tabItem {
                     Text("Search")
-                    Image(systemName:"magnifyingglass")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                }
+                    .tabItem {
+                        Text("Search")
+                        Image(systemName:"magnifyingglass")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }
 
+                }
+                PlayerView()
+                    .offset(y: 200)
             }
+
         }
+
     }
 }
 

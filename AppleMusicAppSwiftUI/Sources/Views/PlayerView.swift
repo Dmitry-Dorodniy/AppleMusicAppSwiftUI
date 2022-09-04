@@ -33,19 +33,28 @@ struct PlayerView: View {
 
                     Spacer()
 
-                    Image(systemName: "play.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 25, height: 25)
-                        .padding()
+                    Button {
+                        print("play")
+                    } label: {
+                        Image(systemName: "play.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 25, height: 25)
+                            .padding()
+                            .foregroundColor(.primary)
+                    }
 
-                    Image(systemName: "forward.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 25, height: 25)
-                        .foregroundColor(.secondary)
-                        .padding()
-                }
+                    Button {
+                        print("play")
+                    } label: {
+                        Image(systemName: "forward.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 25, height: 25)
+                            .padding()
+                            .foregroundColor(.secondary)
+                    }
+               }
             }
     }
 }
