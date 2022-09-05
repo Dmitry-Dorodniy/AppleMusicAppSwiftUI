@@ -17,7 +17,7 @@ struct LibraryView: View {
                 Text("Looking for your music?")
                     .font(.title)
                     .bold()
-                Text("Here will appear music you bought in iTunes Store.")
+                Text("Here will appear music you have bought in iTunes Store.")
                     .foregroundColor(.secondary)
                     .multilineTextAlignment(.center)
                     .padding()

@@ -14,7 +14,6 @@ struct ListView: View {
     @Environment(\.dismiss) var dismiss
 
     var body: some View {
-        //        NavigationView {
         List(selection: $multiSelection) {
             ForEach(itemsList, id: \.self.id) { item in
                 ListCell(item: item)
@@ -22,9 +21,7 @@ struct ListView: View {
             .onMove { itemsList.move(fromOffsets: $0, toOffset: $1) }
         }
         .environment(\.editMode, .constant(.active))
-
         .listStyle(.plain)
-
         .toolbar {
             NavigationLink {
             } label: {
@@ -34,15 +31,10 @@ struct ListView: View {
                     Text("Done")
                 }
             }
-
             .navigationTitle("Library")
-
         }
-
         .navigationBarBackButtonHidden(true)
-        //        }
     }
-
 }
 
 struct ListView_Previews: PreviewProvider {

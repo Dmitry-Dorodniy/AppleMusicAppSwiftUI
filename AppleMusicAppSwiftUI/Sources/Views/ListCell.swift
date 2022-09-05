@@ -28,5 +28,6 @@ struct ListCell: View {
 struct ListCell_Previews: PreviewProvider {
     static var previews: some View {
         ListCell(item: ListModel.items[0])
+            .previewLayout(.fixed(width: 400, height: 50))
     }
 }
