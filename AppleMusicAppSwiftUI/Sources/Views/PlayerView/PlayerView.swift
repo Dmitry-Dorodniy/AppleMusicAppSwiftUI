@@ -17,19 +17,6 @@ struct PlayerView: View {
             HStack {
 
                 PlayerCoverView()
-//                ZStack {
-//                    RoundedRectangle(cornerRadius: 10)
-//                        .fill(Color(UIColor.systemGray5))
-//                        .frame(width: 70, height: 70)
-//                        .shadow(radius: 5, x: 2, y: 2)
-//                        .opacity(0.4)
-//                    Image(systemName: "music.note")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fit)
-//                        .frame(width: 30, height: 30)
-//                        .opacity(0.1)
-//                }
-//                .padding(20)
 
                 Text("Not playing")
                     .foregroundColor(.secondary)
@@ -39,23 +26,13 @@ struct PlayerView: View {
                 Button {
                     print("play")
                 } label: {
-                    Image(systemName: "play.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 25, height: 25)
-                        .padding()
-                        .foregroundColor(.primary)
+                    PlayerButtonImage(systemName: "play.fill")
                 }
 
                 Button {
                     print("play")
                 } label: {
-                    Image(systemName: "forward.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 25, height: 25)
-                        .padding()
-                        .foregroundColor(.secondary)
+                    PlayerButtonImage(systemName: "forward.fill")
                 }
             }
         }
