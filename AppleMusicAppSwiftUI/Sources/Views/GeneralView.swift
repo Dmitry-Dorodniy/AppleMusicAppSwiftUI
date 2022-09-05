@@ -14,28 +14,31 @@ struct GeneralView: View {
     }
 
     var body: some View {
-            ZStack {
-                TabView {
-                    NavigationView {
-                        LibraryView()
-                            .toolbar {
-                                EditButton()
+        ZStack {
+            TabView {
+                NavigationView {
+                    LibraryView()
+                        .toolbar {
+                            NavigationLink {
+                                ListView()
+                            } label: {
+                                Text("Edit")
                             }
-                    }
-                    .tabItem {
-                        Text("Library")
-                        Image("note")
-                            .renderingMode(.template)
+                        }
+                }
+                .tabItem {
+                    Text("Library")
+                    Image("note")
+                        .renderingMode(.template)
+                }
 
-                    }
-
-                    Text("RadioView")
+                Text("RadioView")
                     .tabItem {
                         Text("Radio")
                         Image(systemName:"dot.radiowaves.left.and.right")
                     }
 
-                    Text("Search")
+                Text("Search")
                     .tabItem {
                         Text("Search")
                         Image(systemName:"magnifyingglass")
@@ -43,11 +46,12 @@ struct GeneralView: View {
                             .aspectRatio(contentMode: .fit)
                     }
 
-                }
-                PlayerView()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
-                    .offset(y: -45)
             }
+        }
+        .safeAreaInset(edge: .bottom) {
+            PlayerView()
+                .offset(y: -45)
+        }
 
     }
 }

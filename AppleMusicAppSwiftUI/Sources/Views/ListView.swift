@@ -11,23 +11,29 @@ struct ListView: View {
 
     @State var itemsList = ListModel.items
     @State private var multiSelection = Set<UUID>()
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
-        NavigationView {
         List(selection: $multiSelection) {
             ForEach(itemsList, id: \.self.id) { item in
-                Text(item.name).tag(item.name)
+                ListCell(item: item)
             }
             .onMove { itemsList.move(fromOffsets: $0, toOffset: $1) }
-//            Text($0.name)
-
         }
-
-       .listStyle(.plain)
+        .environment(\.editMode, .constant(.active))
+        .listStyle(.plain)
         .toolbar {
-            EditButton()
+            NavigationLink {
+            } label: {
+                Button {
+                    dismiss()
+                } label: {
+                    Text("Done")
+                }
+            }
+            .navigationTitle("Library")
         }
-    }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
