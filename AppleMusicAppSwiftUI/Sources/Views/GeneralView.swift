@@ -47,8 +47,9 @@ struct GeneralView: View {
                     }
 
             }
+        }
+        .safeAreaInset(edge: .bottom) {
             PlayerView()
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottom)
                 .offset(y: -45)
         }
 

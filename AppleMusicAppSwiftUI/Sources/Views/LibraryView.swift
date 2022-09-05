@@ -24,10 +24,7 @@ struct LibraryView: View {
                 Spacer()
                     .frame(height: 70)
             }
-
-
                 .navigationTitle("Library")
-               
         }
 
     
