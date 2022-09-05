@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 struct LibraryView: View {
   
     var body: some View {
@@ -26,8 +24,6 @@ struct LibraryView: View {
             }
                 .navigationTitle("Library")
         }
-
-    
 }
 
 struct ContentView_Previews: PreviewProvider {

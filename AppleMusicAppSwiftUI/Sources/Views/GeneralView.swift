@@ -45,14 +45,12 @@ struct GeneralView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                     }
-
             }
         }
         .safeAreaInset(edge: .bottom) {
             PlayerView()
                 .offset(y: -45)
         }
-
     }
 }
 
