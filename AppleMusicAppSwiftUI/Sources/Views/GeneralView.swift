@@ -18,9 +18,11 @@ struct GeneralView: View {
             TabView {
                 NavigationView {
                     LibraryView()
+                        .navigationTitle("Library")
                         .toolbar {
                             NavigationLink {
                                 ListView()
+                                    .navigationTitle("Library")
                             } label: {
                                 Text("Edit")
                             }

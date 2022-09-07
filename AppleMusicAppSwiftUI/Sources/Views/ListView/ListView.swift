@@ -31,7 +31,6 @@ struct ListView: View {
                     Text("Done")
                 }
             }
-            .navigationTitle("Library")
         }
         .navigationBarBackButtonHidden(true)
     }
