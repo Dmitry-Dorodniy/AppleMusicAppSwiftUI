@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "MusicNote.svg",
+      "filename" : "HipHopClassicStantion.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "HipHopClassicStantion@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "HipHopClassicStantion@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
