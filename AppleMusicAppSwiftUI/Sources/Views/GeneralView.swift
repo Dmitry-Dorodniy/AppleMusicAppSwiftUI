@@ -33,12 +33,13 @@ struct GeneralView: View {
                     Image("note")
                         .renderingMode(.template)
                 }
-
-                Text("RadioView")
+//                Text("RadioView")
+                RadioView()
                     .tabItem {
                         Text("Radio")
                         Image(systemName:"dot.radiowaves.left.and.right")
                     }
+
 
                 Text("Search")
                     .tabItem {
