@@ -9,11 +9,11 @@ import SwiftUI
 
 struct RadioSingleStationView: View {
     
-    let station: RadioModel
+    let cover: RadioModel
 
     var body: some View {
         HStack {
-            Image(station.imageSqr)
+            Image(cover.imageSqr)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 100,
@@ -21,14 +21,12 @@ struct RadioSingleStationView: View {
                 .cornerRadius(10)
 
             VStack(alignment: .leading) {
-                Text(station.title)
+                Text(cover.title)
                     .font(.title2)
                 Text("Apple Music station")
                     .foregroundColor(.secondary)
                     Divider()
-//                    .frame(width: .infinity, height: 35, alignment: .bottom)
                     .offset(y: 17)
-
             }
             Spacer()
         }
@@ -38,6 +36,6 @@ struct RadioSingleStationView: View {
 
 struct RadioSingleStationView_Previews: PreviewProvider {
     static var previews: some View {
-        RadioSingleStationView(station: RadioModel.covers[0]).previewLayout(.sizeThatFits)
+        RadioSingleStationView(cover: RadioModel.covers[0]).previewLayout(.sizeThatFits)
     }
 }

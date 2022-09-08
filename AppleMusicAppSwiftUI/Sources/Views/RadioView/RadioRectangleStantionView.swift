@@ -31,7 +31,6 @@ struct RadioRectangleStantionView: View {
                     .foregroundColor(.white)
                     .padding([.leading, .bottom], 5)
             }
-
         }
         .padding(.leading, 5)
     }

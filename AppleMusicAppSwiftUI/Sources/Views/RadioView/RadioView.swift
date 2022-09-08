@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct RadioView: View {
-
+    
     @State private var radioCovers = RadioModel.covers
     let rows = [GridItem(.flexible())]
     let columns = [GridItem(.flexible())]
-
+    
     var body: some View {
-            ScrollView(.vertical) {
-                VStack(alignment: .leading) {
+        ScrollView(.vertical) {
+            VStack(alignment: .leading) {
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: rows) {
                         ForEach(radioCovers) { cover in
@@ -23,22 +23,24 @@ struct RadioView: View {
                         }
                     }
                 }
-                    Divider()
-                        .padding(.leading, 5)
-                    Text("Stantion")
-                        .bold()
-                        .font(.title)
-                        .padding(.leading, 5)
-
-                    LazyVGrid(columns: columns) {
-                        ForEach(radioCovers) { cover in
-                            RadioSingleStationView(station: cover)
-                        }
+                Divider()
+                    .padding(.leading, 5)
+                Text("Stantion")
+                    .bold()
+                    .font(.title)
+                    .padding(.leading, 5)
+                
+                LazyVGrid(columns: columns) {
+                    ForEach(radioCovers) { cover in
+                        RadioSingleStationView(cover: cover)
                     }
+                }
+               Rectangle()
+                    .fill(.clear)
+                    .frame(maxWidth: .infinity, minHeight: 100)
             }
-
+        }
     }
-}
 }
 
 struct RadioView_Previews: PreviewProvider {

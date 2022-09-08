@@ -44,7 +44,6 @@ struct GeneralView: View {
                         Image(systemName:"dot.radiowaves.left.and.right")
                     }
 
-
                 Text("Search")
                     .tabItem {
                         Text("Search")
