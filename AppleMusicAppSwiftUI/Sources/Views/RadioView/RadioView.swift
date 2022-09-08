@@ -11,6 +11,7 @@ struct RadioView: View {
 
     @State private var radioCovers = RadioModel.covers
     let rows = [GridItem(.flexible())]
+    let columns = [GridItem(.flexible())]
 
     var body: some View {
             ScrollView(.vertical) {
@@ -19,18 +20,19 @@ struct RadioView: View {
                     LazyHGrid(rows: rows) {
                         ForEach(radioCovers) { cover in
                             RadioRectangleStantionView(covers: cover)
-
                         }
                     }
                 }
-
                     Text("Stantion")
                         .bold()
                         .font(.title)
                         .padding(.leading, 5)
 
-
-
+                    LazyVGrid(columns: columns) {
+                        ForEach(radioCovers) { cover in
+                            RadioSingleStationView(station: cover)
+                        }
+                    }
             }
 
     }

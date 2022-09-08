@@ -28,7 +28,7 @@ struct RadioSingleStationView: View {
             }
             Spacer()
         }
-
+        .padding(.leading, 5)
     }
 }
 
