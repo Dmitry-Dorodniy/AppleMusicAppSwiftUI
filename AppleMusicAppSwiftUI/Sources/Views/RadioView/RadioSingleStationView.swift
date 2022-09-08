@@ -25,6 +25,10 @@ struct RadioSingleStationView: View {
                     .font(.title2)
                 Text("Apple Music station")
                     .foregroundColor(.secondary)
+                    Divider()
+//                    .frame(width: .infinity, height: 35, alignment: .bottom)
+                    .offset(y: 17)
+
             }
             Spacer()
         }

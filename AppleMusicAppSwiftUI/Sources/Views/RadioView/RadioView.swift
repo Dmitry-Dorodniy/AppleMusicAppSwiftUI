@@ -23,6 +23,8 @@ struct RadioView: View {
                         }
                     }
                 }
+                    Divider()
+                        .padding(.leading, 5)
                     Text("Stantion")
                         .bold()
                         .font(.title)

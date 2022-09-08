@@ -13,6 +13,7 @@ struct RadioRectangleStantionView: View {
 
     var body: some View {
         VStack(alignment: .leading) {
+            Divider()
             Text("featured station".uppercased())
                 .foregroundColor(.secondary)
                 .font(.caption2)
