@@ -18,7 +18,7 @@ struct PlayerView: View {
 
                 PlayerCoverView()
 
-                Text("Not playing")
+                Text("Wind of change")
                     .foregroundColor(.secondary)
 
                 Spacer()

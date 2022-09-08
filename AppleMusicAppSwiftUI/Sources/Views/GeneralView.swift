@@ -18,9 +18,11 @@ struct GeneralView: View {
             TabView {
                 NavigationView {
                     LibraryView()
+                        .navigationTitle("Library")
                         .toolbar {
                             NavigationLink {
                                 ListView()
+                                    .navigationTitle("Library")
                             } label: {
                                 Text("Edit")
                             }
@@ -32,7 +34,11 @@ struct GeneralView: View {
                         .renderingMode(.template)
                 }
 
-                Text("RadioView")
+                NavigationView {
+                RadioView()
+                        .navigationTitle("Radio")
+                }
+
                     .tabItem {
                         Text("Radio")
                         Image(systemName:"dot.radiowaves.left.and.right")
