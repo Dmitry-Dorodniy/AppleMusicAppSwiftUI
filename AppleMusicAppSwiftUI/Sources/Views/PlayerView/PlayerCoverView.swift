@@ -20,7 +20,7 @@ struct PlayerCoverView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 30, height: 30)
                 .opacity(0.1)
-            Image("Scorpions")
+            Image("ScorpionsStation")
                 .resizable()
                 .frame(width: 70, height: 70)
                 .scaledToFit()

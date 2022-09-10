@@ -34,6 +34,8 @@ struct RadioModel: Identifiable, Hashable {
                                                 imageSqr: "SmoothJazzStantion"),
                                        RadioModel(title: "Berlin Lebt 3",
                                                   imageSqr: "BerlinLebtStantion"),
+                                       RadioModel(title: "Wind Of Change",
+                                                  imageSqr: "ScorpionsStation"),
                                        RadioModel(title: "Big Shmoke",
                                                   imageSqr: "BigShmokeStantion"),
                                        RadioModel(title: "Chemical Heart",

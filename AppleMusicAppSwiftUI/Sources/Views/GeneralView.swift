@@ -38,13 +38,15 @@ struct GeneralView: View {
                 RadioView()
                         .navigationTitle("Radio")
                 }
-
                     .tabItem {
                         Text("Radio")
                         Image(systemName:"dot.radiowaves.left.and.right")
                     }
 
-                Text("Search")
+                NavigationView {
+                SearchView()
+                        .navigationTitle("Search")
+                }
                     .tabItem {
                         Text("Search")
                         Image(systemName:"magnifyingglass")
