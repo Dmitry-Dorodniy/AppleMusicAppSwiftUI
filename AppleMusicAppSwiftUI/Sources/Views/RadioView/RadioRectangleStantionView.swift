@@ -23,10 +23,12 @@ struct RadioRectangleStantionView: View {
             Text("Apple Music station")
                 .foregroundColor(.secondary)
             ZStack(alignment: .bottomLeading) {
-                Image(covers.imageRect)
+                if let image = covers.imageRect {
+                Image(image)
                     .resizable()
                     .scaledToFit()
                     .cornerRadius(10)
+                }
                 Text("Apple Music station")
                     .foregroundColor(.white)
                     .padding([.leading, .bottom], 5)

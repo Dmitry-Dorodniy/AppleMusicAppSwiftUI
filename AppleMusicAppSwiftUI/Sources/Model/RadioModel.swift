@@ -10,7 +10,7 @@ import Foundation
 struct RadioModel: Identifiable, Hashable {
     var id = UUID()
     var title: String
-    var imageRect: String
+    var imageRect: String?
     var imageSqr: String
 
 
@@ -31,5 +31,19 @@ struct RadioModel: Identifiable, Hashable {
                                                   imageSqr: "RockRussianStantion"),
                                        RadioModel(title: "Smooth Jazz",
                                                   imageRect: "SmoothJazz",
-                                                imageSqr: "SmoothJazzStantion")]
+                                                imageSqr: "SmoothJazzStantion"),
+                                       RadioModel(title: "Berlin Lebt 3",
+                                                  imageSqr: "BerlinLebtStantion"),
+                                       RadioModel(title: "Big Shmoke",
+                                                  imageSqr: "BigShmokeStantion"),
+                                       RadioModel(title: "Chemical Heart",
+                                                  imageSqr: "ChemicalHeart"),
+                                       RadioModel(title: "Day Of Groundhog",
+                                                  imageSqr: "DayOfGroundhogStantion"),
+                                       RadioModel(title: "MirrorMan".uppercased(),
+                                                  imageSqr: "MirrorMan"),
+                                       RadioModel(title: "Street Bully".uppercased(),
+                                                  imageSqr: "StreetBullyStantion"),
+                                       RadioModel(title: "Walk".uppercased(),
+                                                  imageSqr: "WalkStantion")]
 }
