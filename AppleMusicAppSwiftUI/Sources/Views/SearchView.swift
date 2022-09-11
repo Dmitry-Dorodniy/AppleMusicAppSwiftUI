@@ -46,8 +46,10 @@ struct SearchView: View {
                             .cornerRadius(15)
                     }
                 }
+                .padding(.top, 10)
             }
         .padding()
+        .padding(.bottom, Metric.playerHeight)
 
         }
 }

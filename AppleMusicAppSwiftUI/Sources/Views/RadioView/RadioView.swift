@@ -19,7 +19,9 @@ struct RadioView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: rows) {
                         ForEach(radioCovers) { cover in
-                            RadioRectangleStantionView(covers: cover)
+                            if cover.imageRect != nil {
+                            RadioRectangleStantionView(cover: cover)
+                            }
                         }
                     }
                 }
@@ -35,10 +37,11 @@ struct RadioView: View {
                         RadioSingleStationView(cover: cover)
                     }
                 }
-               Rectangle()
-                    .fill(.clear)
-                    .frame(maxWidth: .infinity, minHeight: 100)
+//               Rectangle()
+//                    .fill(.clear)
+//                    .frame(minHeight: Metric.pleyerHeight)
             }
+            .padding(.bottom, Metric.playerHeight)
         }
     }
 }

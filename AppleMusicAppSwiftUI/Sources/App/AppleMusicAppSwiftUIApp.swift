@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@main
+ @main
 struct AppleMusicAppSwiftUIApp: App {
     var body: some Scene {
         WindowGroup {

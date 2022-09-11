@@ -9,6 +9,9 @@ import SwiftUI
 
 struct GeneralView: View {
 
+    @State var expand = false
+    @Namespace var animation
+
     init() {
         UITabBar.appearance().backgroundColor = UIColor.secondarySystemBackground
     }
@@ -54,11 +57,16 @@ struct GeneralView: View {
                             .aspectRatio(contentMode: .fit)
                     }
             }
+//            PlayerView(animation: animation, expand: $expand)
+//                .padding(.bottom)
+////                .offset(y: 229)
         }
         .safeAreaInset(edge: .bottom) {
-            PlayerView()
-                .offset(y: -45)
+            PlayerView(animation: animation, expand: $expand)
+                .offset(y: expand ? 0 : -(Metric.playerHeight / 2) + 5)
         }
+      //  .blur(radius: expand ? 20 : 0)
+        .ignoresSafeArea(expand ? .all : .keyboard)
     }
 }
 

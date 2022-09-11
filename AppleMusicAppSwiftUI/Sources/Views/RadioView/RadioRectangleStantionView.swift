@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RadioRectangleStantionView: View {
 
-    let covers: RadioModel
+    let cover: RadioModel
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -17,13 +17,13 @@ struct RadioRectangleStantionView: View {
             Text("featured station".uppercased())
                 .foregroundColor(.secondary)
                 .font(.caption2)
-            Text(covers.title)
+            Text(cover.title)
                 .font(.title3)
                 .padding(.bottom, -5)
             Text("Apple Music station")
                 .foregroundColor(.secondary)
             ZStack(alignment: .bottomLeading) {
-                if let image = covers.imageRect {
+                if let image = cover.imageRect {
                 Image(image)
                     .resizable()
                     .scaledToFit()
@@ -40,6 +40,6 @@ struct RadioRectangleStantionView: View {
 
 struct RadioRectangleStantionView_Previews: PreviewProvider {
     static var previews: some View {
-        RadioRectangleStantionView(covers: RadioModel.covers[0]).previewLayout(.sizeThatFits)
+        RadioRectangleStantionView(cover: RadioModel.covers[0]).previewLayout(.sizeThatFits)
     }
 }

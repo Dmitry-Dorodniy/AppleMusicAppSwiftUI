@@ -8,40 +8,128 @@
 import SwiftUI
 
 struct PlayerView: View {
+
+    var animation: Namespace.ID
+    @Binding var expand: Bool
+
     var body: some View {
         ZStack {
             Rectangle()
                 .foregroundColor(Color(UIColor.secondarySystemBackground))
-                .frame(maxWidth: .infinity, maxHeight: 100)
-            
-            HStack {
+//              
+         
+//               .foregroundColor(Color(UIColor.secondarySystemBackground))
 
-                PlayerCoverView()
+            //                .frame(maxHeight: Metric.pleyerHeight)
+                .frame(maxHeight: expand ? .infinity : Metric.playerHeight)
 
-                Text("Wind of change")
-                    .foregroundColor(.secondary)
+//                .opacity(0.96)
+            //
+            //                .onTapGesture {
+            //                    withAnimation(.spring()){
+            //                        expand.toggle()
+            //                    }
+            //                }
+            VStack {
 
-                Spacer()
-
-                Button {
-                    print("play")
-                } label: {
-                    PlayerButtonImage(systemName: "play.fill")
+                if expand {
+                Capsule()
+                    .fill(.secondary)
+                    .frame(width: expand ? 60 : 0, height: expand ? 4 : 0)
+                    .opacity(expand ? 1 : 0)
+                    .padding(.top, expand ? 30 : 0)
+                    .padding(.vertical, expand ? 30 : 0)
                 }
 
-                Button {
-                    print("play")
-                } label: {
-                    PlayerButtonImage(systemName: "forward.fill")
+                HStack {
+
+                    PlayerCoverView(expand: $expand)
+
+                    if !expand {
+                        Text("Wind of change")
+                            .font(.title3)
+                        //                        .fontWeight(.bold)
+                        //                    .foregroundColor(.secondary)
+                            .matchedGeometryEffect(id: "Title", in: animation)
+                            .padding(.leading, -10)
+
+                        Spacer()
+
+                        Button {
+                            print("play")
+                        } label: {
+                            PlayerButtonImage(systemName: "play.fill")
+                        }
+
+                        Button {
+                            print("play")
+                        } label: {
+                            PlayerButtonImage(systemName: "forward.fill")
+                        }
+                    }
                 }
+
+                // MARK: - Expanded view
+
+                if expand {
+                    VStack {
+                        HStack {
+                            //                        if expand {
+                            VStack(alignment: .leading, spacing: 10) {
+                                Text("Wind of change")
+                                    .font(.title3)
+//                                    .foregroundColor(.white)
+//                                   .matchedGeometryEffect(id: "Title", in: animation)
+
+                                Text("Scorpions")
+                                    .foregroundColor(.secondary)
+//                                    .padding(.top, 3)
+                                //                                .matchedGeometryEffect(id: "Label", in: animation)
+                            }
+                           .matchedGeometryEffect(id: "Title", in: animation)
+                            //   }
+
+                            Spacer()
+
+                            Button {
+                                print("more...")
+                            } label: {
+                                PlayerButtonImage(systemName: "ellipsis")
+                            }
+                        }
+                        .padding()
+
+                        PlayerProgressLine()
+
+
+                    }
+//                    .matchedGeometryEffect(id: "Title", in: animation)
+                    .frame(width: expand ? nil : 0, height: expand ? nil : 0)
+                    .opacity(expand ? 1 : 0)
+                }
+                if expand {
+                    Spacer()
+                }
+            }
+
+        }
+
+        .onTapGesture(count: 1) {
+            withAnimation(.spring()){
+                expand.toggle()
             }
         }
     }
 }
 
-struct PlayerView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayerView()
-            .previewLayout(.fixed(width: 400, height: 100))
-    }
+//struct PlayerView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlayerView()
+//            .previewLayout(.fixed(width: 400, height: 100))
+//    }
+//}
+enum Metric {
+    static var playerHeight: CGFloat = 90
+    static var screenHeight = UIScreen.main.bounds.height
+    static var safeArea = UIApplication.shared.windows.first?.safeAreaInsets
 }
