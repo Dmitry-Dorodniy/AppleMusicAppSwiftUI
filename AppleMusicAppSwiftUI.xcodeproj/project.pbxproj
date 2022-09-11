@@ -82,10 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				8A3F35ED28C4F8D3006B3892 /* PlayerView.swift */,
-				8ADB1E2828CE35BA00962616 /* PlayerExpandedControlModul.swift */,
-				8A1802B328C67D4F0081EB51 /* PlayerCoverView.swift */,
-				8A1802B628C67F100081EB51 /* PlayerButtonImage.swift */,
-				8ADB1E2628CE12CD00962616 /* PlayerProgressLine.swift */,
+				8ADB1E2A28CE393D00962616 /* PlayerModules */,
 			);
 			path = PlayerView;
 			sourceTree = "<group>";
@@ -171,6 +168,17 @@
 				8ADB1DEF28C8FDE900962616 /* RadioSingleStationView.swift */,
 			);
 			path = RadioView;
+			sourceTree = "<group>";
+		};
+		8ADB1E2A28CE393D00962616 /* PlayerModules */ = {
+			isa = PBXGroup;
+			children = (
+				8ADB1E2828CE35BA00962616 /* PlayerExpandedControlModul.swift */,
+				8A1802B328C67D4F0081EB51 /* PlayerCoverView.swift */,
+				8A1802B628C67F100081EB51 /* PlayerButtonImage.swift */,
+				8ADB1E2628CE12CD00962616 /* PlayerProgressLine.swift */,
+			);
+			path = PlayerModules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

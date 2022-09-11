@@ -22,7 +22,7 @@ struct PlayerProgressLine: View {
         }
 
             HStack {
-                Text("0:00")
+                Text("0:27")
                 Spacer()
                 Text("-4:13")
             }

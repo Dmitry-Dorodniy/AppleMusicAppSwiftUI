@@ -11,6 +11,7 @@ struct PlayerView: View {
 
     var animation: Namespace.ID
     @Binding var expand: Bool
+    @State private var volume: CGFloat = 0
 
     var body: some View {
         ZStack {
@@ -23,13 +24,6 @@ struct PlayerView: View {
             //                .frame(maxHeight: Metric.pleyerHeight)
                 .frame(maxHeight: expand ? .infinity : Metric.playerHeight)
 
-//                .opacity(0.96)
-            //
-            //                .onTapGesture {
-            //                    withAnimation(.spring()){
-            //                        expand.toggle()
-            //                    }
-            //                }
             VStack {
 
                 if expand {
@@ -102,6 +96,14 @@ struct PlayerView: View {
                         PlayerProgressLine()
 
                         PlayerExpandedControlModul()
+
+                        HStack(spacing: 15) {
+                            Image(systemName: "speaker.fill")
+                            Slider(value: $volume)
+                                .tint(.gray)
+                            Image(systemName: "speaker.wave.2.fill")
+                        }
+                        .padding()
                     }
 //                    .matchedGeometryEffect(id: "Title", in: animation)
                     .frame(width: expand ? nil : 0, height: expand ? nil : 0)
@@ -111,7 +113,6 @@ struct PlayerView: View {
                     Spacer()
                 }
             }
-
         }
 
         .onTapGesture(count: 1) {
@@ -128,8 +129,9 @@ struct PlayerView: View {
 //            .previewLayout(.fixed(width: 400, height: 100))
 //    }
 //}
+
 enum Metric {
     static var playerHeight: CGFloat = 90
     static var screenHeight = UIScreen.main.bounds.height
-    static var safeArea = UIApplication.shared.windows.first?.safeAreaInsets
+//    static var safeArea = UIApplication.shared.windows.first?.safeAreaInsets
 }
