@@ -24,7 +24,8 @@
 		8ADB1DF228C9027000962616 /* RadioRectangleStantionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB1DF128C9027000962616 /* RadioRectangleStantionView.swift */; };
 		8ADB1E2528CBA1EF00962616 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB1E2428CBA1EF00962616 /* SearchView.swift */; };
 		8ADB1E2728CE12CD00962616 /* PlayerProgressLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB1E2628CE12CD00962616 /* PlayerProgressLine.swift */; };
-		8ADB1E2928CE35BA00962616 /* PlayerExpandedControlModul.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB1E2828CE35BA00962616 /* PlayerExpandedControlModul.swift */; };
+		8ADB1E2928CE35BA00962616 /* PlayerExtendedControlModul.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB1E2828CE35BA00962616 /* PlayerExtendedControlModul.swift */; };
+		8ADB1E2C28CE3CD500962616 /* PlayerExtendedBottomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB1E2B28CE3CD500962616 /* PlayerExtendedBottomButtons.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,7 +47,8 @@
 		8ADB1DF128C9027000962616 /* RadioRectangleStantionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioRectangleStantionView.swift; sourceTree = "<group>"; };
 		8ADB1E2428CBA1EF00962616 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		8ADB1E2628CE12CD00962616 /* PlayerProgressLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProgressLine.swift; sourceTree = "<group>"; };
-		8ADB1E2828CE35BA00962616 /* PlayerExpandedControlModul.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerExpandedControlModul.swift; sourceTree = "<group>"; };
+		8ADB1E2828CE35BA00962616 /* PlayerExtendedControlModul.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerExtendedControlModul.swift; sourceTree = "<group>"; };
+		8ADB1E2B28CE3CD500962616 /* PlayerExtendedBottomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerExtendedBottomButtons.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,10 +175,11 @@
 		8ADB1E2A28CE393D00962616 /* PlayerModules */ = {
 			isa = PBXGroup;
 			children = (
-				8ADB1E2828CE35BA00962616 /* PlayerExpandedControlModul.swift */,
 				8A1802B328C67D4F0081EB51 /* PlayerCoverView.swift */,
 				8A1802B628C67F100081EB51 /* PlayerButtonImage.swift */,
 				8ADB1E2628CE12CD00962616 /* PlayerProgressLine.swift */,
+				8ADB1E2828CE35BA00962616 /* PlayerExtendedControlModul.swift */,
+				8ADB1E2B28CE3CD500962616 /* PlayerExtendedBottomButtons.swift */,
 			);
 			path = PlayerModules;
 			sourceTree = "<group>";
@@ -257,12 +260,13 @@
 				8A92ACB128C516D700ADE1B2 /* ListView.swift in Sources */,
 				8A92ACB728C52ABE00ADE1B2 /* ListCell.swift in Sources */,
 				8ADB1DF028C8FDE900962616 /* RadioSingleStationView.swift in Sources */,
-				8ADB1E2928CE35BA00962616 /* PlayerExpandedControlModul.swift in Sources */,
+				8ADB1E2928CE35BA00962616 /* PlayerExtendedControlModul.swift in Sources */,
 				8ADB1DEB28C8C54E00962616 /* RadioView.swift in Sources */,
 				8A3F35DA28C4B149006B3892 /* AppleMusicAppSwiftUIApp.swift in Sources */,
 				8A3F35EE28C4F8D3006B3892 /* PlayerView.swift in Sources */,
 				8A92ACAF28C516AB00ADE1B2 /* ListModel.swift in Sources */,
 				8ADB1E2528CBA1EF00962616 /* SearchView.swift in Sources */,
+				8ADB1E2C28CE3CD500962616 /* PlayerExtendedBottomButtons.swift in Sources */,
 				8A1802B428C67D4F0081EB51 /* PlayerCoverView.swift in Sources */,
 				8ADB1E2728CE12CD00962616 /* PlayerProgressLine.swift in Sources */,
 				8A1802B728C67F100081EB51 /* PlayerButtonImage.swift in Sources */,

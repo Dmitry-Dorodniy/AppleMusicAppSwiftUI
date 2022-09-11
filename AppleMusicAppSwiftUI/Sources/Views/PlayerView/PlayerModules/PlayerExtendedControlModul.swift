@@ -1,5 +1,5 @@
 //
-//  PlayerExpandedControlModul.swift
+//  PlayerExtendedControlModul.swift
 //  AppleMusicAppSwiftUI
 //
 //  Created by Dmitry Dorodniy on 11.09.2022.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PlayerExpandedControlModul: View {
+struct PlayerExtendedControlModul: View {
     var body: some View {
         HStack {
             Button {
@@ -35,6 +35,6 @@ struct PlayerExpandedControlModul: View {
 
 struct PlayerExpandedControlModul_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerExpandedControlModul()
+        PlayerExtendedControlModul()
     }
 }

@@ -11,7 +11,7 @@ struct PlayerView: View {
 
     var animation: Namespace.ID
     @Binding var expand: Bool
-    @State private var volume: CGFloat = 0
+    @State private var volume: CGFloat = 7
 
     var body: some View {
         ZStack {
@@ -23,6 +23,7 @@ struct PlayerView: View {
 
             //                .frame(maxHeight: Metric.pleyerHeight)
                 .frame(maxHeight: expand ? .infinity : Metric.playerHeight)
+                .opacity(0.95)
 
             VStack {
 
@@ -95,15 +96,23 @@ struct PlayerView: View {
 
                         PlayerProgressLine()
 
-                        PlayerExpandedControlModul()
+                        PlayerExtendedControlModul()
+                        
 
                         HStack(spacing: 15) {
                             Image(systemName: "speaker.fill")
-                            Slider(value: $volume)
+                            Slider(value: $volume, in: 0...10, onEditingChanged: {_ in
+                                print("volume \(volume)")
+                            })
                                 .tint(.gray)
                             Image(systemName: "speaker.wave.2.fill")
                         }
                         .padding()
+
+                        // MARK: - ToDo: safeArea Padding
+                        PlayerExtendedBottomButtons()
+
+                        
                     }
 //                    .matchedGeometryEffect(id: "Title", in: animation)
                     .frame(width: expand ? nil : 0, height: expand ? nil : 0)
