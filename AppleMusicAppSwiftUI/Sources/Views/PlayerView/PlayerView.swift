@@ -58,13 +58,13 @@ struct PlayerView: View {
                         Button {
                             print("play")
                         } label: {
-                            PlayerButtonImage(systemName: "play.fill")
+                            PlayerButtonImage(systemName: "play.fill", size: 25)
                         }
 
                         Button {
                             print("play")
                         } label: {
-                            PlayerButtonImage(systemName: "forward.fill")
+                            PlayerButtonImage(systemName: "forward.fill", size: 25)
                         }
                     }
                 }
@@ -94,14 +94,14 @@ struct PlayerView: View {
                             Button {
                                 print("more...")
                             } label: {
-                                PlayerButtonImage(systemName: "ellipsis")
+                                PlayerButtonImage(systemName: "ellipsis", size: 20)
                             }
                         }
                         .padding()
 
                         PlayerProgressLine()
 
-
+                        PlayerExpandedControlModul()
                     }
 //                    .matchedGeometryEffect(id: "Title", in: animation)
                     .frame(width: expand ? nil : 0, height: expand ? nil : 0)

@@ -10,12 +10,13 @@ import SwiftUI
 struct PlayerButtonImage: View {
 
     var systemName: String
+    var size: CGFloat
     
     var body: some View {
         Image(systemName: systemName)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(width: 25, height: 25)
+            .frame(width: size, height: size)
             .padding()
             .foregroundColor(.primary)
     }
@@ -23,6 +24,6 @@ struct PlayerButtonImage: View {
 
 struct PlayerButtonImage_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerButtonImage(systemName: "play")
+        PlayerButtonImage(systemName: "play", size: 15)
     }
 }
