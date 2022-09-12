@@ -18,17 +18,17 @@ struct SearchView: View {
 
         ScrollView {
             VStack(spacing: 18) {
-                HStack(spacing: 15) {
-                    Image(systemName: "magnifyingglass")
-                    TextField("Search", text: $search)
-                }
-                .padding(.vertical, 10)
-                .padding(.horizontal)
-                .background(Color.primary.opacity(0.06))
-                .cornerRadius(15)
+//                HStack(spacing: 15) {
+//                    Image(systemName: "magnifyingglass")
+//                    TextField("Search", text: $search)
+//                }
+//                .padding(.vertical, 10)
+//                .padding(.horizontal)
+//                .background(Color.primary.opacity(0.06))
+//                .cornerRadius(15)
 
                 LazyVGrid(columns: columns, spacing: 15) {
-                    ForEach(radio.covers) { cover in
+                    ForEach(radio.covers.filter({ $0.title.contains(search) || search.isEmpty }), id: \.self) { cover in
                         NavigationLink {
                             SearchDetailView(radioCover: cover)
                                 .navigationTitle(cover.title)
@@ -47,28 +47,13 @@ struct SearchView: View {
                                     .padding([.bottom, .leading], 15)
                         }
                         }
-
-//                        Button {
-//                            print("\(cover.title) pressed")
-//                        } label: {
-//                            ZStack(alignment: .bottomLeading) {
-//                                Image(cover.imageSqr)
-//                                    .resizable()
-//                                    .aspectRatio(contentMode: .fill)
-//                                    .frame(width: (UIScreen.main.bounds.width - 50) / 2,
-//                                           height: 180)
-//                                    .cornerRadius(15)
-//
-//                                Spacer()
-//                                Text(cover.title)
-//                                    .foregroundColor(.white)
-//                                    .padding([.bottom, .leading], 15)
-//                            }
-//                        }
                     }
                 }
                 .padding(.top, 10)
+                .searchable(text: $search)
+
             }
+
             .padding()
             .padding(.bottom, Metric.playerHeight)
         }
