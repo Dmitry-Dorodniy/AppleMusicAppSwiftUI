@@ -23,7 +23,7 @@ struct PlayerExtendedBottomButtons: View {
             }
 
             Button {
-                print("message")
+                print("list")
             } label: {
                 PlayerButtonImage(systemName: "text.badge.plus", size: 20)
             }

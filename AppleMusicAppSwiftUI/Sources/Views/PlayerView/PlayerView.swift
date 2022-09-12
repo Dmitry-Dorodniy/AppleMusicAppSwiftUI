@@ -109,8 +109,8 @@ struct PlayerView: View {
                         }
                         .padding()
 
-                        // MARK: - ToDo: safeArea Padding
                         PlayerExtendedBottomButtons()
+                            .padding()
 
                         
                     }
