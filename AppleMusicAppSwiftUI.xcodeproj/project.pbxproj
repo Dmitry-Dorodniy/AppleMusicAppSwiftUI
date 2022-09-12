@@ -26,6 +26,7 @@
 		8ADB1E2728CE12CD00962616 /* PlayerProgressLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB1E2628CE12CD00962616 /* PlayerProgressLine.swift */; };
 		8ADB1E2928CE35BA00962616 /* PlayerExtendedControlModul.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB1E2828CE35BA00962616 /* PlayerExtendedControlModul.swift */; };
 		8ADB1E2C28CE3CD500962616 /* PlayerExtendedBottomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB1E2B28CE3CD500962616 /* PlayerExtendedBottomButtons.swift */; };
+		8ADB1E2E28CF882E00962616 /* SearchDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB1E2D28CF882E00962616 /* SearchDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		8ADB1E2628CE12CD00962616 /* PlayerProgressLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerProgressLine.swift; sourceTree = "<group>"; };
 		8ADB1E2828CE35BA00962616 /* PlayerExtendedControlModul.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerExtendedControlModul.swift; sourceTree = "<group>"; };
 		8ADB1E2B28CE3CD500962616 /* PlayerExtendedBottomButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerExtendedBottomButtons.swift; sourceTree = "<group>"; };
+		8ADB1E2D28CF882E00962616 /* SearchDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				8A1802B528C67D8A0081EB51 /* PlayerView */,
 				8A3F35DB28C4B149006B3892 /* LibraryView.swift */,
 				8ADB1E2428CBA1EF00962616 /* SearchView.swift */,
+				8ADB1E2D28CF882E00962616 /* SearchDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				8A3F35EC28C4DE86006B3892 /* GeneralView.swift in Sources */,
 				8A3F35DC28C4B149006B3892 /* LibraryView.swift in Sources */,
 				8ADB1DED28C8C63200962616 /* RadioModel.swift in Sources */,
+				8ADB1E2E28CF882E00962616 /* SearchDetailView.swift in Sources */,
 				8A92ACB128C516D700ADE1B2 /* ListView.swift in Sources */,
 				8A92ACB728C52ABE00ADE1B2 /* ListCell.swift in Sources */,
 				8ADB1DF028C8FDE900962616 /* RadioSingleStationView.swift in Sources */,

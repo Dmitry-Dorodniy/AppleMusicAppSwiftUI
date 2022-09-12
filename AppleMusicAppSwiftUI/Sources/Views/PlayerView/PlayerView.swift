@@ -17,11 +17,6 @@ struct PlayerView: View {
         ZStack {
             Rectangle()
                 .foregroundColor(Color(UIColor.secondarySystemBackground))
-//              
-         
-//               .foregroundColor(Color(UIColor.secondarySystemBackground))
-
-            //                .frame(maxHeight: Metric.pleyerHeight)
                 .frame(maxHeight: expand ? .infinity : Metric.playerHeight)
                 .opacity(0.95)
 
