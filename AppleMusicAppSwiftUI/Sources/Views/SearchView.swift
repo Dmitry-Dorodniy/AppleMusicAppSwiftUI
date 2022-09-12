@@ -9,7 +9,8 @@ import SwiftUI
 
 struct SearchView: View {
     @State private var search = ""
-    @State private var radioCovers = RadioModel.covers
+//    @State private var radioCovers = RadioModel.covers
+    @StateObject var radio = Radio()
     
     let columns = Array(repeating: GridItem(.flexible(), spacing: 20), count: 2)
 
@@ -27,9 +28,9 @@ struct SearchView: View {
                 .cornerRadius(15)
 
                 LazyVGrid(columns: columns, spacing: 15) {
-                    ForEach(radioCovers) { cover in
+                    ForEach(radio.covers) { cover in
                         NavigationLink {
-                            SearchDetailView()
+                            SearchDetailView(radioCover: cover)
                                 .navigationTitle(cover.title)
                         } label: {
                             ZStack(alignment: .bottomLeading) {

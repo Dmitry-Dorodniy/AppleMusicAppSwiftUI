@@ -7,6 +7,10 @@
 
 import Foundation
 
+class Radio: ObservableObject {
+    @Published var covers: [RadioModel] = RadioModel.covers
+}
+
 struct RadioModel: Identifiable, Hashable {
     var id = UUID()
     var title: String

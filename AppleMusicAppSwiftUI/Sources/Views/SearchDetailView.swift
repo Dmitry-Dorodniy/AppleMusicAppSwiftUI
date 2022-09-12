@@ -8,15 +8,17 @@
 import SwiftUI
 
 struct SearchDetailView: View {
+var radioCover: RadioModel
 
     var body: some View {
 
-        Text("cover.title")
+        Text(radioCover.title)
     }
 }
 
 struct SearchDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchDetailView()
+        SearchDetailView(radioCover: RadioModel.covers[0])
     }
 }
+
