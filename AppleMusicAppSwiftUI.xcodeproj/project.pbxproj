@@ -140,8 +140,7 @@
 				8A1802B228C67C550081EB51 /* ListView */,
 				8A1802B528C67D8A0081EB51 /* PlayerView */,
 				8A3F35DB28C4B149006B3892 /* LibraryView.swift */,
-				8ADB1E2428CBA1EF00962616 /* SearchView.swift */,
-				8ADB1E2D28CF882E00962616 /* SearchDetailView.swift */,
+				8A7417CC28CFB75A008149CC /* SearchView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -163,6 +162,15 @@
 				8A3F35E828C4B236006B3892 /* Views */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		8A7417CC28CFB75A008149CC /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				8ADB1E2428CBA1EF00962616 /* SearchView.swift */,
+				8ADB1E2D28CF882E00962616 /* SearchDetailView.swift */,
+			);
+			path = SearchView;
 			sourceTree = "<group>";
 		};
 		8ADB1DEE28C8FDBD00962616 /* RadioView */ = {

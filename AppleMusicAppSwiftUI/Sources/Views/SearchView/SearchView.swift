@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     @State private var search = ""
-//    @State private var radioCovers = RadioModel.covers
+    //    @State private var radioCovers = RadioModel.covers
     @StateObject var radio = Radio()
     
     let columns = Array(repeating: GridItem(.flexible(), spacing: 20), count: 2)
@@ -18,14 +18,14 @@ struct SearchView: View {
 
         ScrollView {
             VStack(spacing: 18) {
-//                HStack(spacing: 15) {
-//                    Image(systemName: "magnifyingglass")
-//                    TextField("Search", text: $search)
-//                }
-//                .padding(.vertical, 10)
-//                .padding(.horizontal)
-//                .background(Color.primary.opacity(0.06))
-//                .cornerRadius(15)
+                //                HStack(spacing: 15) {
+                //                    Image(systemName: "magnifyingglass")
+                //                    TextField("Search", text: $search)
+                //                }
+                //                .padding(.vertical, 10)
+                //                .padding(.horizontal)
+                //                .background(Color.primary.opacity(0.06))
+                //                .cornerRadius(15)
 
                 LazyVGrid(columns: columns, spacing: 15) {
 
@@ -47,7 +47,7 @@ struct SearchView: View {
                                 Text(cover.title)
                                     .foregroundColor(.white)
                                     .padding([.bottom, .leading], 15)
-                        }
+                            }
                         }
                     }
                 }
