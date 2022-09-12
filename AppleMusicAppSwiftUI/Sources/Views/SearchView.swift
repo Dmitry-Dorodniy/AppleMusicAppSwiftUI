@@ -28,10 +28,12 @@ struct SearchView: View {
 //                .cornerRadius(15)
 
                 LazyVGrid(columns: columns, spacing: 15) {
-                    ForEach(radio.covers.filter({ $0.title.contains(search) || search.isEmpty }), id: \.self) { cover in
+
+                    ForEach(radio.covers.filter({ $0.title.lowercased().contains(search.lowercased()) || search.isEmpty }), id: \.self) { cover in
                         NavigationLink {
                             SearchDetailView(radioCover: cover)
                                 .navigationTitle(cover.title)
+
                         } label: {
                             ZStack(alignment: .bottomLeading) {
                                 Image(cover.imageSqr)
@@ -50,10 +52,8 @@ struct SearchView: View {
                     }
                 }
                 .padding(.top, 10)
-                .searchable(text: $search)
-
+                .searchable(text: $search, prompt: "Search music")
             }
-
             .padding()
             .padding(.bottom, Metric.playerHeight)
         }
