@@ -12,7 +12,7 @@ struct SearchView: View {
     @State private var search = ""
     @StateObject var radio = Music()
     
-    let columns = Array(repeating: GridItem(.flexible(), spacing: 20), count: 2)
+    let columns = Array(repeating: GridItem(.flexible(), spacing: 15), count: 2)
 
     var body: some View {
 
@@ -78,7 +78,6 @@ struct SearchView: View {
                         }
                 }
                 .padding(.top, 0)
-
 
             }
             .searchable(text: $search, prompt: "Search music")

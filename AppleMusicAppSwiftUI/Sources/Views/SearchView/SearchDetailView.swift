@@ -14,17 +14,17 @@ var selectedRadio: RadioModel
     
     
     let rows = [GridItem(.flexible())]
-    let columns = [GridItem(.flexible())]
+    let columns = Array(repeating: GridItem(.flexible(), spacing: 15), count: 2)
 
     var body: some View {
         ScrollView(.vertical) {
             VStack(alignment: .leading) {
                 ScrollView(.horizontal, showsIndicators: false) {
-
                     LazyHGrid(rows: rows) {
                         RadioRectangleStantionView(cover: selectedRadio)
+
                         ForEach(radio.stantions) { cover in
-                            if cover.imageRect != nil {
+                            if cover != selectedRadio {
                                 RadioRectangleStantionView(cover: cover)
                             }
                         }
@@ -32,16 +32,35 @@ var selectedRadio: RadioModel
                 }
                 Divider()
                     .padding(.leading, 5)
-                Text("Stantion")
-                    .bold()
-                    .font(.title)
-                    .padding(.leading, 5)
+                HStack {
+                    Text("Autumn mood")
+                        .font(.title)
+                    Spacer()
+                    Text("All")
+                        .foregroundColor(.red)
+
+                }
+                .padding([.top, .leading, .trailing], 15)
 
                 LazyVGrid(columns: columns) {
-//                    ForEach(radio) { cover in
-//                        RadioSingleStationView(cover: cover)
-//                    }
+                    ForEach(radio.albums) { cover in
+                        ZStack(alignment: .bottomLeading) {
+                            Image(cover.imageSqr)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: (UIScreen.main.bounds.width - 50) / 2,
+                                       height: 180)
+                                .cornerRadius(15)
+
+                            Spacer()
+                            Text(cover.title)
+                                .foregroundColor(.white)
+                                .padding([.bottom, .leading], 15)
+                        }
+                    }
                 }
+                .padding([.leading, .trailing])
+
             }
             .padding(.bottom, Metric.playerHeight)
         }
