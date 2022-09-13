@@ -8,17 +8,49 @@
 import SwiftUI
 
 struct SearchDetailView: View {
-var radioCover: RadioModel
+    
+var selectedRadio: RadioModel
+@StateObject var radio = Music()
+    
+    
+    let rows = [GridItem(.flexible())]
+    let columns = [GridItem(.flexible())]
 
     var body: some View {
+        ScrollView(.vertical) {
+            VStack(alignment: .leading) {
+                ScrollView(.horizontal, showsIndicators: false) {
 
-        Text(radioCover.title)
+                    LazyHGrid(rows: rows) {
+                        RadioRectangleStantionView(cover: selectedRadio)
+                        ForEach(radio.stantions) { cover in
+                            if cover.imageRect != nil {
+                                RadioRectangleStantionView(cover: cover)
+                            }
+                        }
+                    }
+                }
+                Divider()
+                    .padding(.leading, 5)
+                Text("Stantion")
+                    .bold()
+                    .font(.title)
+                    .padding(.leading, 5)
+
+                LazyVGrid(columns: columns) {
+//                    ForEach(radio) { cover in
+//                        RadioSingleStationView(cover: cover)
+//                    }
+                }
+            }
+            .padding(.bottom, Metric.playerHeight)
+        }
     }
 }
 
 struct SearchDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchDetailView(radioCover: RadioModel.covers[0])
+        SearchDetailView(selectedRadio: RadioModel.covers[0])
     }
 }
 

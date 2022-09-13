@@ -8,30 +8,25 @@
 import SwiftUI
 
 struct SearchView: View {
+
     @State private var search = ""
-    //    @State private var radioCovers = RadioModel.covers
-    @StateObject var radio = Radio()
+    @StateObject var radio = Music()
     
     let columns = Array(repeating: GridItem(.flexible(), spacing: 20), count: 2)
 
     var body: some View {
 
         ScrollView {
-            VStack(spacing: 18) {
-                //                HStack(spacing: 15) {
-                //                    Image(systemName: "magnifyingglass")
-                //                    TextField("Search", text: $search)
-                //                }
-                //                .padding(.vertical, 10)
-                //                .padding(.horizontal)
-                //                .background(Color.primary.opacity(0.06))
-                //                .cornerRadius(15)
+            VStack(alignment: .leading, spacing: 18) {
+                Text("Radio Stantion:")
+                    .font(.title2)
+                    .padding(.bottom, 0)
 
                 LazyVGrid(columns: columns, spacing: 15) {
-
-                    ForEach(radio.covers.filter({ $0.title.lowercased().contains(search.lowercased()) || search.isEmpty }), id: \.self) { cover in
+                    ForEach(radio.stantions.filter({ $0.title.lowercased().contains(search.lowercased())
+                        || search.isEmpty }), id: \.self) { cover in
                         NavigationLink {
-                            SearchDetailView(radioCover: cover)
+                            SearchDetailView(selectedRadio: cover)
                                 .navigationTitle(cover.title)
 
                         } label: {
@@ -51,9 +46,42 @@ struct SearchView: View {
                         }
                     }
                 }
-                .padding(.top, 10)
-                .searchable(text: $search, prompt: "Search music")
+                .padding(.top, 0)
+
+                Text("Tracks:")
+                    .font(.title2)
+                    .padding(.bottom, 0)
+
+                LazyVGrid(columns: columns, spacing: 15) {
+                    ForEach(radio.albums.filter({ $0.title.lowercased().contains(search.lowercased())
+                        || search.isEmpty }), id: \.self) { cover in
+                            NavigationLink {
+
+                                SearchDetailView(selectedRadio: radio.stantions[0])
+                                    .navigationTitle(cover.title)
+
+                            } label: {
+                                ZStack(alignment: .bottomLeading) {
+                                    Image(cover.imageSqr)
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: (UIScreen.main.bounds.width - 50) / 2,
+                                               height: 180)
+                                        .cornerRadius(15)
+
+                                    Spacer()
+                                    Text(cover.title)
+                                        .foregroundColor(.white)
+                                        .padding([.bottom, .leading], 15)
+                                }
+                            }
+                        }
+                }
+                .padding(.top, 0)
+
+
             }
+            .searchable(text: $search, prompt: "Search music")
             .padding()
             .padding(.bottom, Metric.playerHeight)
         }

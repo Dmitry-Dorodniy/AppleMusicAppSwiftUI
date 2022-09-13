@@ -7,8 +7,9 @@
 
 import Foundation
 
-class Radio: ObservableObject {
-    @Published var covers: [RadioModel] = RadioModel.covers
+class Music: ObservableObject {
+    @Published var stantions: [RadioModel] = RadioModel.covers
+    @Published var albums: [AlbumModel] = AlbumModel.covers
 }
 
 struct RadioModel: Identifiable, Hashable {
@@ -35,21 +36,28 @@ struct RadioModel: Identifiable, Hashable {
                                                   imageSqr: "RockRussianStantion"),
                                        RadioModel(title: "Smooth Jazz",
                                                   imageRect: "SmoothJazz",
-                                                imageSqr: "SmoothJazzStantion"),
-                                       RadioModel(title: "Berlin Lebt 3",
-                                                  imageSqr: "BerlinLebtStantion"),
-                                       RadioModel(title: "Wind Of Change",
-                                                  imageSqr: "ScorpionsStation"),
-                                       RadioModel(title: "Big Shmoke",
-                                                  imageSqr: "BigShmokeStantion"),
-                                       RadioModel(title: "Chemical Heart",
-                                                  imageSqr: "ChemicalHeart"),
-                                       RadioModel(title: "Day Of Groundhog",
-                                                  imageSqr: "DayOfGroundhogStantion"),
-                                       RadioModel(title: "MirrorMan".uppercased(),
-                                                  imageSqr: "MirrorMan"),
-                                       RadioModel(title: "Street Bully".uppercased(),
-                                                  imageSqr: "StreetBullyStantion"),
-                                       RadioModel(title: "Walk".uppercased(),
-                                                  imageSqr: "WalkStantion")]
+                                                imageSqr: "SmoothJazzStantion")]
+}
+
+struct AlbumModel: Identifiable, Hashable {
+    var id = UUID()
+    var title: String
+    var imageSqr: String
+
+    static var covers: [AlbumModel] = [ AlbumModel(title: "Berlin Lebt 3",
+                                                   imageSqr: "BerlinLebtStantion"),
+                                        AlbumModel(title: "Wind Of Change",
+                                                   imageSqr: "ScorpionsStation"),
+                                        AlbumModel(title: "Big Shmoke",
+                                                   imageSqr: "BigShmokeStantion"),
+                                        AlbumModel(title: "Chemical Heart",
+                                                   imageSqr: "ChemicalHeart"),
+                                        AlbumModel(title: "Day Of Groundhog",
+                                                   imageSqr: "DayOfGroundhogStantion"),
+                                        AlbumModel(title: "MirrorMan".uppercased(),
+                                                   imageSqr: "MirrorMan"),
+                                        AlbumModel(title: "Street Bully".uppercased(),
+                                                   imageSqr: "StreetBullyStantion"),
+                                        AlbumModel(title: "Walk".uppercased(),
+                                                   imageSqr: "WalkStantion")]
 }
