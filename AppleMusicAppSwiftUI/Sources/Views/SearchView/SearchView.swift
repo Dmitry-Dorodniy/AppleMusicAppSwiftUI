@@ -56,7 +56,6 @@ struct SearchView: View {
                     ForEach(radio.albums.filter({ $0.title.lowercased().contains(search.lowercased())
                         || search.isEmpty }), id: \.self) { cover in
                             NavigationLink {
-
                                 SearchDetailView(selectedRadio: radio.stantions[0])
                                     .navigationTitle(cover.title)
 
@@ -84,8 +83,9 @@ struct SearchView: View {
             .padding()
             .padding(.bottom, Metric.playerHeight)
         }
+        }
     }
-}
+
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {

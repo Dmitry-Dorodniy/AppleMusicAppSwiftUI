@@ -9,7 +9,7 @@ import Foundation
 
 class Music: ObservableObject {
     @Published var stantions: [RadioModel] = RadioModel.covers
-    @Published var albums: [AlbumModel] = AlbumModel.covers
+    @Published var albums: [TrackModel] = TrackModel.covers
 }
 
 struct RadioModel: Identifiable, Hashable {
@@ -39,25 +39,25 @@ struct RadioModel: Identifiable, Hashable {
                                                 imageSqr: "SmoothJazzStantion")]
 }
 
-struct AlbumModel: Identifiable, Hashable {
+struct TrackModel: Identifiable, Hashable {
     var id = UUID()
     var title: String
     var imageSqr: String
 
-    static var covers: [AlbumModel] = [ AlbumModel(title: "Berlin Lebt 3",
+    static var covers: [TrackModel] = [ TrackModel(title: "Berlin Lebt 3",
                                                    imageSqr: "BerlinLebtStantion"),
-                                        AlbumModel(title: "Wind Of Change",
+                                        TrackModel(title: "Wind Of Change",
                                                    imageSqr: "ScorpionsStation"),
-                                        AlbumModel(title: "Big Shmoke",
+                                        TrackModel(title: "Big Shmoke",
                                                    imageSqr: "BigShmokeStantion"),
-                                        AlbumModel(title: "Chemical Heart",
+                                        TrackModel(title: "Chemical Heart",
                                                    imageSqr: "ChemicalHeart"),
-                                        AlbumModel(title: "Day Of Groundhog",
+                                        TrackModel(title: "Day Of Groundhog",
                                                    imageSqr: "DayOfGroundhogStantion"),
-                                        AlbumModel(title: "MirrorMan".uppercased(),
+                                        TrackModel(title: "MirrorMan".uppercased(),
                                                    imageSqr: "MirrorMan"),
-                                        AlbumModel(title: "Street Bully".uppercased(),
+                                        TrackModel(title: "Street Bully".uppercased(),
                                                    imageSqr: "StreetBullyStantion"),
-                                        AlbumModel(title: "Walk".uppercased(),
+                                        TrackModel(title: "Walk".uppercased(),
                                                    imageSqr: "WalkStantion")]
 }

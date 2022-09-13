@@ -64,7 +64,14 @@ var selectedRadio: RadioModel
             }
             .padding(.bottom, Metric.playerHeight)
         }
+        .toolbar {
+            Button {
+                print("More...")
+            } label: {
+                Image(systemName: "ellipsis")
+            }
     }
+}
 }
 
 struct SearchDetailView_Previews: PreviewProvider {

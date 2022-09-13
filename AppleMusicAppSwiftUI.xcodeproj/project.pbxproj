@@ -19,7 +19,7 @@
 		8A92ACB128C516D700ADE1B2 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A92ACB028C516D700ADE1B2 /* ListView.swift */; };
 		8A92ACB728C52ABE00ADE1B2 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A92ACB628C52ABE00ADE1B2 /* ListCell.swift */; };
 		8ADB1DEB28C8C54E00962616 /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB1DEA28C8C54E00962616 /* RadioView.swift */; };
-		8ADB1DED28C8C63200962616 /* RadioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB1DEC28C8C63200962616 /* RadioModel.swift */; };
+		8ADB1DED28C8C63200962616 /* MusicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB1DEC28C8C63200962616 /* MusicModel.swift */; };
 		8ADB1DF028C8FDE900962616 /* RadioSingleStationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB1DEF28C8FDE900962616 /* RadioSingleStationView.swift */; };
 		8ADB1DF228C9027000962616 /* RadioRectangleStantionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB1DF128C9027000962616 /* RadioRectangleStantionView.swift */; };
 		8ADB1E2528CBA1EF00962616 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB1E2428CBA1EF00962616 /* SearchView.swift */; };
@@ -43,7 +43,7 @@
 		8A92ACB028C516D700ADE1B2 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		8A92ACB628C52ABE00ADE1B2 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		8ADB1DEA28C8C54E00962616 /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
-		8ADB1DEC28C8C63200962616 /* RadioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioModel.swift; sourceTree = "<group>"; };
+		8ADB1DEC28C8C63200962616 /* MusicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicModel.swift; sourceTree = "<group>"; };
 		8ADB1DEF28C8FDE900962616 /* RadioSingleStationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioSingleStationView.swift; sourceTree = "<group>"; };
 		8ADB1DF128C9027000962616 /* RadioRectangleStantionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioRectangleStantionView.swift; sourceTree = "<group>"; };
 		8ADB1E2428CBA1EF00962616 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				8A92ACAE28C516AB00ADE1B2 /* ListModel.swift */,
-				8ADB1DEC28C8C63200962616 /* RadioModel.swift */,
+				8ADB1DEC28C8C63200962616 /* MusicModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -267,7 +267,7 @@
 			files = (
 				8A3F35EC28C4DE86006B3892 /* GeneralView.swift in Sources */,
 				8A3F35DC28C4B149006B3892 /* LibraryView.swift in Sources */,
-				8ADB1DED28C8C63200962616 /* RadioModel.swift in Sources */,
+				8ADB1DED28C8C63200962616 /* MusicModel.swift in Sources */,
 				8ADB1E2E28CF882E00962616 /* SearchDetailView.swift in Sources */,
 				8A92ACB128C516D700ADE1B2 /* ListView.swift in Sources */,
 				8A92ACB728C52ABE00ADE1B2 /* ListCell.swift in Sources */,
