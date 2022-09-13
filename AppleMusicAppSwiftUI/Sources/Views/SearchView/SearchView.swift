@@ -33,10 +33,11 @@ struct SearchView: View {
                             ZStack(alignment: .bottomLeading) {
                                 Image(cover.imageSqr)
                                     .resizable()
-                                    .aspectRatio(contentMode: .fill)
-                                    .frame(width: (UIScreen.main.bounds.width - 50) / 2,
-                                           height: 180)
-                                    .cornerRadius(15)
+                                    .imageCoverStyle()
+//                                    .aspectRatio(contentMode: .fill)
+//                                    .frame(width: (UIScreen.main.bounds.width - 50) / 2,
+//                                           height: 180)
+//                                    .cornerRadius(15)
 
                                 Spacer()
                                 Text(cover.title)
@@ -63,10 +64,11 @@ struct SearchView: View {
                                 ZStack(alignment: .bottomLeading) {
                                     Image(cover.imageSqr)
                                         .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(width: (UIScreen.main.bounds.width - 50) / 2,
-                                               height: 180)
-                                        .cornerRadius(15)
+                                        .imageCoverStyle()
+//                                        .aspectRatio(contentMode: .fill)
+//                                        .frame(width: (UIScreen.main.bounds.width - 50) / 2,
+//                                               height: 180)
+//                                        .cornerRadius(15)
 
                                     Spacer()
                                     Text(cover.title)
@@ -85,7 +87,6 @@ struct SearchView: View {
         }
         }
     }
-
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
