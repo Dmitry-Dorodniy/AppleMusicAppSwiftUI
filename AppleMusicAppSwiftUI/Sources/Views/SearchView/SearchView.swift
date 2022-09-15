@@ -16,7 +16,6 @@ struct SearchView: View {
     let columns = Array(repeating: GridItem(.flexible(), spacing: 15), count: 2)
 
     var body: some View {
-
         ScrollView {
             VStack(alignment: .leading, spacing: 18) {
                 Text("Radio Stantion:")
@@ -26,27 +25,23 @@ struct SearchView: View {
                 LazyVGrid(columns: columns, spacing: 15) {
                     ForEach(radio.stantions.filter({ $0.title.lowercased().contains(search.lowercased())
                         || search.isEmpty }), id: \.self) { cover in
-                        NavigationLink {
-                            SearchDetailView(selectedRadio: cover)
-                                .navigationTitle(cover.title)
+                            NavigationLink {
+                                SearchDetailView(selectedRadio: cover)
+                                    .navigationTitle(cover.title)
 
-                        } label: {
-                            ZStack(alignment: .bottomLeading) {
-                                Image(cover.imageSqr)
-                                    .resizable()
-                                    .imageCoverStyle()
-//                                    .aspectRatio(contentMode: .fill)
-//                                    .frame(width: (UIScreen.main.bounds.width - 50) / 2,
-//                                           height: 180)
-//                                    .cornerRadius(15)
+                            } label: {
+                                ZStack(alignment: .bottomLeading) {
+                                    Image(cover.imageSqr)
+                                        .resizable()
+                                        .imageCoverStyle()
 
-                                Spacer()
-                                Text(cover.title)
-                                    .foregroundColor(.white)
-                                    .padding([.bottom, .leading], 15)
+                                    Spacer()
+                                    Text(cover.title)
+                                        .foregroundColor(.white)
+                                        .padding([.bottom, .leading], 15)
+                                }
                             }
                         }
-                    }
                 }
                 .padding(.top, 0)
 
@@ -68,11 +63,6 @@ struct SearchView: View {
                                         .resizable()
                                         .imageCoverStyle()
                                     
-//                                        .aspectRatio(contentMode: .fill)
-//                                        .frame(width: (UIScreen.main.bounds.width - 50) / 2,
-//                                               height: 180)
-//                                        .cornerRadius(15)
-
                                     Spacer()
                                     Text(cover.title)
                                         .foregroundColor(.white)
@@ -88,8 +78,8 @@ struct SearchView: View {
             .padding()
             .padding(.bottom, Metric.playerHeight)
         }
-        }
     }
+}
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {

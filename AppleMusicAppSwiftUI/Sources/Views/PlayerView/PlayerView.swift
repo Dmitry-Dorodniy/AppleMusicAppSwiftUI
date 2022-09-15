@@ -69,20 +69,14 @@ struct PlayerView: View {
                 if expand {
                     VStack {
                         HStack {
-                            //                        if expand {
                             VStack(alignment: .leading, spacing: 10) {
                                 Text(currentMusic.track)
                                     .font(.title3)
-//                                    .foregroundColor(.white)
-//                                   .matchedGeometryEffect(id: "Title", in: animation)
 
                                 Text(currentMusic.album)
                                     .foregroundColor(.secondary)
-//                                    .padding(.top, 3)
-                                //                                .matchedGeometryEffect(id: "Label", in: animation)
                             }
                            .matchedGeometryEffect(id: "Title", in: animation)
-                            //   }
 
                             Spacer()
 
@@ -97,7 +91,6 @@ struct PlayerView: View {
                         PlayerProgressLine()
 
                         PlayerExtendedControlModul(isPlaying: $isPlaying)
-                        
 
                         HStack(spacing: 15) {
                             Image(systemName: "speaker.fill")
@@ -111,10 +104,7 @@ struct PlayerView: View {
 
                         PlayerExtendedBottomButtons()
                             .padding()
-
-                        
                     }
-//                    .matchedGeometryEffect(id: "Title", in: animation)
                     .frame(width: expand ? nil : 0, height: expand ? nil : 0)
                     .opacity(expand ? 1 : 0)
                 }
@@ -123,7 +113,6 @@ struct PlayerView: View {
                 }
             }
         }
-
         .onTapGesture(count: 1) {
             withAnimation(.spring()){
                 expand.toggle()

@@ -8,21 +8,20 @@
 import SwiftUI
 
 struct LibraryView: View {
-  
-    var body: some View {
 
-            VStack(alignment: .center, spacing: 5) {
-                Text("Looking for your music?")
-                    .font(.title)
-                    .bold()
-                Text("Here will appear music you have bought in iTunes Store.")
-                    .foregroundColor(.secondary)
-                    .multilineTextAlignment(.center)
-                    .padding()
-                Spacer()
-                    .frame(height: 70)
-            }
+    var body: some View {
+        VStack(alignment: .center, spacing: 5) {
+            Text("Looking for your music?")
+                .font(.title)
+                .bold()
+            Text("Here will appear music you have bought in iTunes Store.")
+                .foregroundColor(.secondary)
+                .multilineTextAlignment(.center)
+                .padding()
+            Spacer()
+                .frame(height: 70)
         }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {

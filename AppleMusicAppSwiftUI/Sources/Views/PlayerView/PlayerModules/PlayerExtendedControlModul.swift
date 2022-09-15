@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PlayerExtendedControlModul: View {
+
     @Binding var isPlaying: Bool
 
     var body: some View {
@@ -35,9 +36,3 @@ struct PlayerExtendedControlModul: View {
         .padding([.leading, .trailing], 40)
     }
 }
-
-//struct PlayerExpandedControlModul_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PlayerExtendedControlModul(isPlaying: true)
-//    }
-//}

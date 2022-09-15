@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct SearchDetailView: View {
+
+    @StateObject var radio = Music()
     
-var selectedRadio: RadioModel
-@StateObject var radio = Music()
-    
-    
+    var selectedRadio: RadioModel
+
     let rows = [GridItem(.flexible())]
     let columns = Array(repeating: GridItem(.flexible(), spacing: 15), count: 2)
 
@@ -30,8 +30,10 @@ var selectedRadio: RadioModel
                         }
                     }
                 }
+
                 Divider()
                     .padding(.leading, 5)
+
                 HStack {
                     Text("Autumn mood")
                         .font(.title)
@@ -48,10 +50,6 @@ var selectedRadio: RadioModel
                             Image(cover.imageSqr)
                                 .resizable()
                                 .imageCoverStyle()
-//                                .aspectRatio(contentMode: .fill)
-//                                .frame(width: (UIScreen.main.bounds.width - 50) / 2,
-//                                       height: 180)
-//                                .cornerRadius(15)
 
                             Spacer()
                             Text(cover.title)
@@ -61,7 +59,6 @@ var selectedRadio: RadioModel
                     }
                 }
                 .padding([.leading, .trailing])
-
             }
             .padding(.bottom, Metric.playerHeight)
         }
@@ -71,8 +68,8 @@ var selectedRadio: RadioModel
             } label: {
                 Image(systemName: "ellipsis")
             }
+        }
     }
-}
 }
 
 struct SearchDetailView_Previews: PreviewProvider {
