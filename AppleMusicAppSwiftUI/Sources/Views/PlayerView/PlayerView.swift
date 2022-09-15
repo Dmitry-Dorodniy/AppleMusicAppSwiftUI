@@ -12,6 +12,9 @@ struct PlayerView: View {
     var animation: Namespace.ID
     @Binding var expand: Bool
     @State private var volume: CGFloat = 7
+    @State private var albums = Music().albums
+    @EnvironmentObject var currentMusic: CurrentMusic
+  
 
     var body: some View {
         ZStack {
@@ -36,7 +39,7 @@ struct PlayerView: View {
                     PlayerCoverView(expand: $expand)
 
                     if !expand {
-                        Text("Wind of change")
+                        Text(currentMusic.track)
                             .font(.title3)
                         //                        .fontWeight(.bold)
                         //                    .foregroundColor(.secondary)
@@ -66,12 +69,12 @@ struct PlayerView: View {
                         HStack {
                             //                        if expand {
                             VStack(alignment: .leading, spacing: 10) {
-                                Text("Wind of change")
+                                Text(currentMusic.track)
                                     .font(.title3)
 //                                    .foregroundColor(.white)
 //                                   .matchedGeometryEffect(id: "Title", in: animation)
 
-                                Text("Scorpions")
+                                Text(currentMusic.album)
                                     .foregroundColor(.secondary)
 //                                    .padding(.top, 3)
                                 //                                .matchedGeometryEffect(id: "Label", in: animation)

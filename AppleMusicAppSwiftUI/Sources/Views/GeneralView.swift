@@ -11,6 +11,7 @@ struct GeneralView: View {
 
     @State var expand = false
     @Namespace var animation
+//    @State private var currentTrack = "Wind of change"
 
     init() {
         UITabBar.appearance().backgroundColor = UIColor.secondarySystemBackground

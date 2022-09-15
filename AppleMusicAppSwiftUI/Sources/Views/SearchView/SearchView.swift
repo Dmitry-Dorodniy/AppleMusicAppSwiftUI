@@ -11,6 +11,7 @@ struct SearchView: View {
 
     @State private var search = ""
     @StateObject var radio = Music()
+    @EnvironmentObject var currentMusic: CurrentMusic
     
     let columns = Array(repeating: GridItem(.flexible(), spacing: 15), count: 2)
 
@@ -56,15 +57,18 @@ struct SearchView: View {
                 LazyVGrid(columns: columns, spacing: 15) {
                     ForEach(radio.albums.filter({ $0.title.lowercased().contains(search.lowercased())
                         || search.isEmpty }), id: \.self) { cover in
-                            NavigationLink {
-                                SearchDetailView(selectedRadio: radio.stantions[0])
-                                    .navigationTitle(cover.title)
+                            Button {
+                                currentMusic.track = cover.title
+                                currentMusic.coverImage = cover.imageSqr
+//                                SearchDetailView(selectedRadio: radio.stantions[0])
+//                                    .navigationTitle(cover.title)
 
                             } label: {
                                 ZStack(alignment: .bottomLeading) {
                                     Image(cover.imageSqr)
                                         .resizable()
                                         .imageCoverStyle()
+                                    
 //                                        .aspectRatio(contentMode: .fill)
 //                                        .frame(width: (UIScreen.main.bounds.width - 50) / 2,
 //                                               height: 180)

@@ -9,11 +9,13 @@ import SwiftUI
 
  @main
 struct AppleMusicAppSwiftUIApp: App {
-
+   @StateObject var currentMusic = CurrentMusic()
     var body: some Scene {
         WindowGroup {
             GeneralView()
                 .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
+                .environmentObject(currentMusic)
+
         }
     }
 }
@@ -30,7 +32,8 @@ extension UIApplication {
 }
 
 extension UIApplication: UIGestureRecognizerDelegate {
-    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+                                  shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
 }
@@ -51,3 +54,4 @@ extension View{
         self.modifier(ImageCoversModifier())
     }
 }
+

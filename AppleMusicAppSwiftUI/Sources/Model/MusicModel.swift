@@ -42,22 +42,37 @@ struct RadioModel: Identifiable, Hashable {
 struct TrackModel: Identifiable, Hashable {
     var id = UUID()
     var title: String
+    var artist: String
     var imageSqr: String
 
     static var covers: [TrackModel] = [ TrackModel(title: "Berlin Lebt 3",
+                                                   artist: "Berlin Lebt 3",
                                                    imageSqr: "BerlinLebtStantion"),
                                         TrackModel(title: "Wind Of Change",
+                                                   artist: "Scorpions",
                                                    imageSqr: "ScorpionsStation"),
                                         TrackModel(title: "Big Shmoke",
+                                                   artist: "Scorpions",
                                                    imageSqr: "BigShmokeStantion"),
                                         TrackModel(title: "Chemical Heart",
+                                                   artist: "Scorpions",
                                                    imageSqr: "ChemicalHeart"),
                                         TrackModel(title: "Day Of Groundhog",
+                                                   artist: "Scorpions",
                                                    imageSqr: "DayOfGroundhogStantion"),
                                         TrackModel(title: "MirrorMan".uppercased(),
+                                                   artist: "Scorpions",
                                                    imageSqr: "MirrorMan"),
                                         TrackModel(title: "Street Bully".uppercased(),
+                                                   artist: "Scorpions",
                                                    imageSqr: "StreetBullyStantion"),
                                         TrackModel(title: "Walk".uppercased(),
+                                                   artist: "Scorpions",
                                                    imageSqr: "WalkStantion")]
+}
+
+class CurrentMusic: ObservableObject {
+    @Published var track: String = "Wind of change"
+    @Published var album: String = "Scorpions"
+    @Published var coverImage: String = "ScorpionsStation"
 }

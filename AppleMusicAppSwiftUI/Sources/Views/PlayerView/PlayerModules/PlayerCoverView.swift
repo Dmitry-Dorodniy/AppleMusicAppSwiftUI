@@ -10,6 +10,7 @@ import SwiftUI
 struct PlayerCoverView: View {
 
     @Binding var expand: Bool
+    @EnvironmentObject var currentMusic: CurrentMusic
 
     var body: some View {
 
@@ -26,7 +27,7 @@ struct PlayerCoverView: View {
                 .opacity(0.1)
 
 
-            Image("ScorpionsStation")
+            Image(currentMusic.coverImage)
                 .resizable()
                 .frame(width: expand ? Metric.screenHeight / 3 : 70,
                        height: expand ? Metric.screenHeight / 3 : 70)
