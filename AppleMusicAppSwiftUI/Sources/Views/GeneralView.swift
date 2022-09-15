@@ -9,6 +9,10 @@ import SwiftUI
 
 struct GeneralView: View {
 
+    @State var expand = false
+    @State var isPlaying = false
+    @Namespace var animation
+
     init() {
         UITabBar.appearance().backgroundColor = UIColor.secondarySystemBackground
     }
@@ -38,13 +42,15 @@ struct GeneralView: View {
                 RadioView()
                         .navigationTitle("Radio")
                 }
-
                     .tabItem {
                         Text("Radio")
                         Image(systemName:"dot.radiowaves.left.and.right")
                     }
 
-                Text("Search")
+                NavigationView {
+                SearchView()
+                        .navigationTitle("Search")
+                }
                     .tabItem {
                         Text("Search")
                         Image(systemName:"magnifyingglass")
@@ -54,9 +60,12 @@ struct GeneralView: View {
             }
         }
         .safeAreaInset(edge: .bottom) {
-            PlayerView()
-                .offset(y: -45)
+            PlayerView(animation: animation,
+                       isPlaying: $isPlaying,
+                       expand: $expand)
+                .offset(y: expand ? 0 : -(Metric.playerHeight / 2) + 5)
         }
+        .ignoresSafeArea(expand ? .all : .keyboard)
     }
 }
 

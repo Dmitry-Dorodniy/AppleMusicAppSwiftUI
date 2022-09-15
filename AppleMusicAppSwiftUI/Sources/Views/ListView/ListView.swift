@@ -32,6 +32,7 @@ struct ListView: View {
                 }
             }
         }
+        .padding(.bottom, Metric.playerHeight)
         .navigationBarBackButtonHidden(true)
     }
 }

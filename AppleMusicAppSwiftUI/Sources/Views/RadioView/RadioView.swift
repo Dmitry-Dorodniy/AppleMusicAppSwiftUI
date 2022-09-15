@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct RadioView: View {
-    
-    @State private var radioCovers = RadioModel.covers
+
+    @State private var radio = Music().stantions
     let rows = [GridItem(.flexible())]
     let columns = [GridItem(.flexible())]
     
@@ -18,8 +18,10 @@ struct RadioView: View {
             VStack(alignment: .leading) {
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: rows) {
-                        ForEach(radioCovers) { cover in
-                            RadioRectangleStantionView(covers: cover)
+                        ForEach(radio) { cover in
+                            if cover.imageRect != nil {
+                                RadioRectangleStantionView(cover: cover)
+                            }
                         }
                     }
                 }
@@ -31,14 +33,12 @@ struct RadioView: View {
                     .padding(.leading, 5)
                 
                 LazyVGrid(columns: columns) {
-                    ForEach(radioCovers) { cover in
+                    ForEach(radio) { cover in
                         RadioSingleStationView(cover: cover)
                     }
                 }
-               Rectangle()
-                    .fill(.clear)
-                    .frame(maxWidth: .infinity, minHeight: 100)
             }
+            .padding(.bottom, Metric.playerHeight)
         }
     }
 }
