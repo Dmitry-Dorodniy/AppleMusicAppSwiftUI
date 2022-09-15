@@ -10,8 +10,8 @@ import SwiftUI
 struct GeneralView: View {
 
     @State var expand = false
+    @State var isPlaying = false
     @Namespace var animation
-//    @State private var currentTrack = "Wind of change"
 
     init() {
         UITabBar.appearance().backgroundColor = UIColor.secondarySystemBackground
@@ -58,15 +58,13 @@ struct GeneralView: View {
                             .aspectRatio(contentMode: .fit)
                     }
             }
-//            PlayerView(animation: animation, expand: $expand)
-//                .padding(.bottom)
-////                .offset(y: 229)
         }
         .safeAreaInset(edge: .bottom) {
-            PlayerView(animation: animation, expand: $expand)
+            PlayerView(animation: animation,
+                       isPlaying: $isPlaying,
+                       expand: $expand)
                 .offset(y: expand ? 0 : -(Metric.playerHeight / 2) + 5)
         }
-      //  .blur(radius: expand ? 20 : 0)
         .ignoresSafeArea(expand ? .all : .keyboard)
     }
 }

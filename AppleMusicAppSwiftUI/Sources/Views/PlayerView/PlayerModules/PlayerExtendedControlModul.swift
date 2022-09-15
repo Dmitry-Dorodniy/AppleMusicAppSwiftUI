@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PlayerExtendedControlModul: View {
+    @Binding var isPlaying: Bool
+
     var body: some View {
         HStack {
             Button {
@@ -19,8 +21,9 @@ struct PlayerExtendedControlModul: View {
             Spacer()
             Button {
                 print("play")
+                isPlaying.toggle()
             } label: {
-                PlayerButtonImage(systemName: "play.fill", size: 35)
+                PlayerButtonImage(systemName: isPlaying ? "pause.fill" : "play.fill", size: 35)
             }
             Spacer()
             Button {
@@ -33,8 +36,8 @@ struct PlayerExtendedControlModul: View {
     }
 }
 
-struct PlayerExpandedControlModul_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayerExtendedControlModul()
-    }
-}
+//struct PlayerExpandedControlModul_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PlayerExtendedControlModul(isPlaying: true)
+//    }
+//}

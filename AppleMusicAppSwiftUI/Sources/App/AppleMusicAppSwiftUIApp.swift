@@ -15,7 +15,6 @@ struct AppleMusicAppSwiftUIApp: App {
             GeneralView()
                 .onAppear(perform: UIApplication.shared.addTapGestureRecognizer)
                 .environmentObject(currentMusic)
-
         }
     }
 }

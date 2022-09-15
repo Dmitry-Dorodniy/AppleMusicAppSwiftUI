@@ -60,8 +60,7 @@ struct SearchView: View {
                             Button {
                                 currentMusic.track = cover.title
                                 currentMusic.coverImage = cover.imageSqr
-//                                SearchDetailView(selectedRadio: radio.stantions[0])
-//                                    .navigationTitle(cover.title)
+                                currentMusic.album = cover.artist
 
                             } label: {
                                 ZStack(alignment: .bottomLeading) {

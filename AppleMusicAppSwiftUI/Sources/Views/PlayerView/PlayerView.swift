@@ -10,6 +10,7 @@ import SwiftUI
 struct PlayerView: View {
 
     var animation: Namespace.ID
+    @Binding var isPlaying: Bool
     @Binding var expand: Bool
     @State private var volume: CGFloat = 7
     @State private var albums = Music().albums
@@ -36,7 +37,7 @@ struct PlayerView: View {
 
                 HStack {
 
-                    PlayerCoverView(expand: $expand)
+                    PlayerCoverView(expand: $expand, isPlaying: $isPlaying)
 
                     if !expand {
                         Text(currentMusic.track)
@@ -50,8 +51,9 @@ struct PlayerView: View {
 
                         Button {
                             print("play")
+                            isPlaying.toggle()
                         } label: {
-                            PlayerButtonImage(systemName: "play.fill", size: 25)
+                            PlayerButtonImage(systemName: isPlaying ? "pause.fill" : "play.fill", size: 25)
                         }
 
                         Button {
@@ -94,7 +96,7 @@ struct PlayerView: View {
 
                         PlayerProgressLine()
 
-                        PlayerExtendedControlModul()
+                        PlayerExtendedControlModul(isPlaying: $isPlaying)
                         
 
                         HStack(spacing: 15) {
