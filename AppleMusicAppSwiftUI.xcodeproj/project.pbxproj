@@ -18,6 +18,7 @@
 		8A92ACAF28C516AB00ADE1B2 /* ListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A92ACAE28C516AB00ADE1B2 /* ListModel.swift */; };
 		8A92ACB128C516D700ADE1B2 /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A92ACB028C516D700ADE1B2 /* ListView.swift */; };
 		8A92ACB728C52ABE00ADE1B2 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A92ACB628C52ABE00ADE1B2 /* ListCell.swift */; };
+		8ABF7A5D28D37AEF0070FFD6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ABF7A5C28D37AEF0070FFD6 /* SearchViewController.swift */; };
 		8ADB1DEB28C8C54E00962616 /* RadioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB1DEA28C8C54E00962616 /* RadioView.swift */; };
 		8ADB1DED28C8C63200962616 /* MusicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB1DEC28C8C63200962616 /* MusicModel.swift */; };
 		8ADB1DF028C8FDE900962616 /* RadioSingleStationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ADB1DEF28C8FDE900962616 /* RadioSingleStationView.swift */; };
@@ -42,6 +43,7 @@
 		8A92ACAE28C516AB00ADE1B2 /* ListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListModel.swift; sourceTree = "<group>"; };
 		8A92ACB028C516D700ADE1B2 /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		8A92ACB628C52ABE00ADE1B2 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		8ABF7A5C28D37AEF0070FFD6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		8ADB1DEA28C8C54E00962616 /* RadioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioView.swift; sourceTree = "<group>"; };
 		8ADB1DEC28C8C63200962616 /* MusicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicModel.swift; sourceTree = "<group>"; };
 		8ADB1DEF28C8FDE900962616 /* RadioSingleStationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioSingleStationView.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				8A1802B228C67C550081EB51 /* ListView */,
 				8ADB1DEE28C8FDBD00962616 /* RadioView */,
 				8A7417CC28CFB75A008149CC /* SearchView */,
+				8ABF7A5B28D37A9E0070FFD6 /* SearchViewUIKit */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -171,6 +174,14 @@
 				8ADB1E2D28CF882E00962616 /* SearchDetailView.swift */,
 			);
 			path = SearchView;
+			sourceTree = "<group>";
+		};
+		8ABF7A5B28D37A9E0070FFD6 /* SearchViewUIKit */ = {
+			isa = PBXGroup;
+			children = (
+				8ABF7A5C28D37AEF0070FFD6 /* SearchViewController.swift */,
+			);
+			path = SearchViewUIKit;
 			sourceTree = "<group>";
 		};
 		8ADB1DEE28C8FDBD00962616 /* RadioView */ = {
@@ -269,6 +280,7 @@
 				8A3F35DC28C4B149006B3892 /* LibraryView.swift in Sources */,
 				8ADB1DED28C8C63200962616 /* MusicModel.swift in Sources */,
 				8ADB1E2E28CF882E00962616 /* SearchDetailView.swift in Sources */,
+				8ABF7A5D28D37AEF0070FFD6 /* SearchViewController.swift in Sources */,
 				8A92ACB128C516D700ADE1B2 /* ListView.swift in Sources */,
 				8A92ACB728C52ABE00ADE1B2 /* ListCell.swift in Sources */,
 				8ADB1DF028C8FDE900962616 /* RadioSingleStationView.swift in Sources */,
