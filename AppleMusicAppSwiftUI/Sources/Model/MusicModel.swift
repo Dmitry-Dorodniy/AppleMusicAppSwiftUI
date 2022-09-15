@@ -12,12 +12,17 @@ class Music: ObservableObject {
     @Published var albums: [TrackModel] = TrackModel.covers
 }
 
+class CurrentMusic: ObservableObject {
+    @Published var track: String = "Wind of change"
+    @Published var album: String = "Scorpions"
+    @Published var coverImage: String = "ScorpionsStation"
+}
+
 struct RadioModel: Identifiable, Hashable {
     var id = UUID()
     var title: String
     var imageRect: String?
     var imageSqr: String
-
 
     static var covers: [RadioModel] = [RadioModel(title: "Chillout",
                                                   imageRect: "Chillout",
@@ -69,10 +74,4 @@ struct TrackModel: Identifiable, Hashable {
                                         TrackModel(title: "Walk".uppercased(),
                                                    artist: "MINUSUSHI, BXNOSTOWN",
                                                    imageSqr: "WalkStantion")]
-}
-
-class CurrentMusic: ObservableObject {
-    @Published var track: String = "Wind of change"
-    @Published var album: String = "Scorpions"
-    @Published var coverImage: String = "ScorpionsStation"
 }
