@@ -48,7 +48,8 @@ struct GeneralView: View {
                     }
 
                 NavigationView {
-                SearchView()
+//                SearchView()
+                    UIKView()
                         .navigationTitle("Search")
                 }
                     .tabItem {
@@ -66,6 +67,17 @@ struct GeneralView: View {
                 .offset(y: expand ? 0 : -(Metric.playerHeight / 2) + 5)
         }
         .ignoresSafeArea(expand ? .all : .keyboard)
+    }
+}
+
+struct UIKView: UIViewControllerRepresentable {
+
+    func makeUIViewController(context: Context) -> UIViewController {
+        return SearchViewController()
+    }
+
+    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
+        // можно оставить пустым
     }
 }
 
