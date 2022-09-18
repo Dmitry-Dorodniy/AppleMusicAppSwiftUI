@@ -14,13 +14,15 @@ class SearchViewController: UIViewController {
 
     private lazy var searchController: UISearchController = {
         let search = UISearchController(searchResultsController: nil)
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search music..."
-        searchController.searchBar.autocapitalizationType = .none
+        search.obscuresBackgroundDuringPresentation = false
+        search.searchBar.placeholder = "Search music..."
+        search.searchBar.autocapitalizationType = .none
         search.delegate = self
 
         return search
     }()
+
+//    private lazy var search = UISearchController(searchResultsController: nil)
 
     private lazy var collectionView: UICollectionView = {
         let collection = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
@@ -33,46 +35,27 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       navigationItem.searchController = searchController
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Search"
 
-
-
-//        view.addSubview(searchController)
-//       view.addSubview(collectionView)
-//        collectionView.frame = view.bounds
-//
-
-
+        setupView()
     }
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
         collectionView.frame = view.bounds
-
     }
 
-//    private func setupLayout() {
-//        collectionView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-//
-////        NSLayoutConstraint.activate([
-////            searchController.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-////            searchController.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-////            searchController.topAnchor.constraint(equalTo: view.topAnchor),
-////
-////            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-////            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-////            collectionView.topAnchor.constraint(equalTo: searchController.bottomAnchor),
-////            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-////
-////        ])
-//
-//    }
+    private func setupView() {
+        navigationItem.searchController = searchController
+        navigationItem.title = "Search"
+        navigationController?.navigationBar.prefersLargeTitles = true
+
+        view.addSubview(collectionView)
+    }
+
 
     private func createLayout() -> UICollectionViewLayout {
-        let spacing: CGFloat = 5
+        let spacing: CGFloat = 8
 
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.5),
@@ -88,7 +71,7 @@ class SearchViewController: UIViewController {
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
 
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = .init(top: 0, leading: 0, bottom: Metric.playerHeight, trailing: 0)
+        section.contentInsets = .init(top: 0, leading: 8, bottom: Metric.playerHeight, trailing: 8)
 
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout

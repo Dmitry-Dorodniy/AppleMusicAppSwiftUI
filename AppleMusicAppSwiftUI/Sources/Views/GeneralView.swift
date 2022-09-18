@@ -48,9 +48,9 @@ struct GeneralView: View {
                     }
 
                 NavigationView {
-//                SearchView()
-                    UIKView()
-//                       .navigationTitle("Search")
+                SearchView()
+//                    UIKView()
+                      .navigationTitle("Search")
                 }
                     .tabItem {
                         Text("Search")
@@ -58,6 +58,21 @@ struct GeneralView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                     }
+
+                NavigationView {
+
+                                    UIKView()
+
+                }
+                .tabItem {
+                    Text("Search UIKit")
+                    Image(systemName:"magnifyingglass")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
+                
+
+
             }
         }
         .safeAreaInset(edge: .bottom) {
