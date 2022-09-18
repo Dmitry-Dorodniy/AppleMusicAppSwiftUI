@@ -17,7 +17,7 @@ class SearchViewController: UIViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search music..."
         searchController.searchBar.autocapitalizationType = .none
-        search.searchBar.delegate = self
+        search.delegate = self
 
         return search
     }()
@@ -33,12 +33,14 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+       navigationItem.searchController = searchController
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Search"
-        navigationItem.searchController = searchController
+
+
 
 //        view.addSubview(searchController)
-       view.addSubview(collectionView)
+//       view.addSubview(collectionView)
 //        collectionView.frame = view.bounds
 //
 
