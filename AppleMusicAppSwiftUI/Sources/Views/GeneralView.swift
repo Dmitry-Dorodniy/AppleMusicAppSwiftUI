@@ -50,7 +50,7 @@ struct GeneralView: View {
                 NavigationView {
 //                SearchView()
                     UIKView()
-                        .navigationTitle("Search")
+//                       .navigationTitle("Search")
                 }
                     .tabItem {
                         Text("Search")
@@ -64,20 +64,19 @@ struct GeneralView: View {
             PlayerView(animation: animation,
                        isPlaying: $isPlaying,
                        expand: $expand)
-                .offset(y: expand ? 0 : -(Metric.playerHeight / 2) + 5)
+                .offset(y: expand ? 0 : -(Metric.playerHeight / 2) + 6)
         }
         .ignoresSafeArea(expand ? .all : .keyboard)
     }
 }
 
 struct UIKView: UIViewControllerRepresentable {
-
     func makeUIViewController(context: Context) -> UIViewController {
-        return SearchViewController()
+        let navigationController = UINavigationController(rootViewController: SearchViewController())
+        return navigationController
     }
 
     func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
-        // можно оставить пустым
     }
 }
 

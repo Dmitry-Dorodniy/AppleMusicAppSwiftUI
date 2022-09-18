@@ -10,7 +10,7 @@ import UIKit
 class SearchCollectionViewCell: UICollectionViewCell {
     static let identifier = "SearchCollectionViewCell"
 
-    lazy var imageView: UIImageView = {
+    private lazy var imageView: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFill
         image.clipsToBounds = true
@@ -19,10 +19,18 @@ class SearchCollectionViewCell: UICollectionViewCell {
         return image
     }()
 
+    private lazy var trackTitle: UILabel = {
+        let title = UILabel()
+        title.translatesAutoresizingMaskIntoConstraints = false
+        title.textColor = .white
+        return title
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         contentView.addSubview(imageView)
+        imageView.addSubview(trackTitle)
     }
 
     required init?(coder: NSCoder) {
@@ -31,12 +39,23 @@ class SearchCollectionViewCell: UICollectionViewCell {
 
     func configure(with model: TrackModel) {
         imageView.image = UIImage(named: model.imageSqr)
+        trackTitle.text = model.title
+    }
+
+    private func setupLayout() {
+        imageView.frame = contentView.bounds
+
+        NSLayoutConstraint.activate([
+            trackTitle.leadingAnchor.constraint(equalTo: imageView.leadingAnchor, constant: 10),
+            trackTitle.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -10)
+        ])
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        
+        setupLayout()
 
-        imageView.frame = contentView.bounds
     }
 
     override func prepareForReuse() {
