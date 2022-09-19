@@ -42,8 +42,6 @@ struct PlayerView: View {
                     if !expand {
                         Text(currentMusic.track)
                             .font(.title3)
-                        //                        .fontWeight(.bold)
-                        //                    .foregroundColor(.secondary)
                             .matchedGeometryEffect(id: "Title", in: animation)
                             .padding(.leading, -10)
 
@@ -121,15 +119,7 @@ struct PlayerView: View {
     }
 }
 
-//struct PlayerView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PlayerView()
-//            .previewLayout(.fixed(width: 400, height: 100))
-//    }
-//}
-
 enum Metric {
     static var playerHeight: CGFloat = 90
     static var screenHeight = UIScreen.main.bounds.height
-//    static var safeArea = UIApplication.shared.windows.first?.safeAreaInsets
 }

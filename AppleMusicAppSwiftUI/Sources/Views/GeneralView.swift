@@ -49,7 +49,7 @@ struct GeneralView: View {
 
                 NavigationView {
                 SearchView()
-                        .navigationTitle("Search")
+                      .navigationTitle("Search")
                 }
                     .tabItem {
                         Text("Search")
@@ -57,13 +57,23 @@ struct GeneralView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                     }
+
+                NavigationView {
+                    SearchViewByUIVC()
+                }
+                .tabItem {
+                    Text("Search UIKit")
+                    Image(systemName:"arrow.up.left.and.down.right.magnifyingglass")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
             }
         }
         .safeAreaInset(edge: .bottom) {
             PlayerView(animation: animation,
                        isPlaying: $isPlaying,
                        expand: $expand)
-                .offset(y: expand ? 0 : -(Metric.playerHeight / 2) + 5)
+                .offset(y: expand ? 0 : -(Metric.playerHeight / 2) + 6)
         }
         .ignoresSafeArea(expand ? .all : .keyboard)
     }
