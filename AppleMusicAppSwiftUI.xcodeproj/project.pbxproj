@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8A1802B428C67D4F0081EB51 /* PlayerCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1802B328C67D4F0081EB51 /* PlayerCoverView.swift */; };
 		8A1802B728C67F100081EB51 /* PlayerButtonImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1802B628C67F100081EB51 /* PlayerButtonImage.swift */; };
+		8A2405BA28D768850029A0D4 /* SearchViewByUIVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2405B928D768850029A0D4 /* SearchViewByUIVC.swift */; };
 		8A3F35DA28C4B149006B3892 /* AppleMusicAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3F35D928C4B149006B3892 /* AppleMusicAppSwiftUIApp.swift */; };
 		8A3F35DC28C4B149006B3892 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3F35DB28C4B149006B3892 /* LibraryView.swift */; };
 		8A3F35DE28C4B14A006B3892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A3F35DD28C4B14A006B3892 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* Begin PBXFileReference section */
 		8A1802B328C67D4F0081EB51 /* PlayerCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCoverView.swift; sourceTree = "<group>"; };
 		8A1802B628C67F100081EB51 /* PlayerButtonImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerButtonImage.swift; sourceTree = "<group>"; };
+		8A2405B928D768850029A0D4 /* SearchViewByUIVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewByUIVC.swift; sourceTree = "<group>"; };
 		8A3F35D628C4B149006B3892 /* MusicAppSUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicAppSUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A3F35D928C4B149006B3892 /* AppleMusicAppSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicAppSwiftUIApp.swift; sourceTree = "<group>"; };
 		8A3F35DB28C4B149006B3892 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 		8ABF7A5B28D37A9E0070FFD6 /* SearchViewUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				8A2405B928D768850029A0D4 /* SearchViewByUIVC.swift */,
 				8ABF7A5C28D37AEF0070FFD6 /* SearchViewController.swift */,
 				8ABF7A5E28D4363A0070FFD6 /* SearchCollectionViewCell.swift */,
 			);
@@ -287,6 +290,7 @@
 				8A92ACB128C516D700ADE1B2 /* ListView.swift in Sources */,
 				8A92ACB728C52ABE00ADE1B2 /* ListCell.swift in Sources */,
 				8ADB1DF028C8FDE900962616 /* RadioSingleStationView.swift in Sources */,
+				8A2405BA28D768850029A0D4 /* SearchViewByUIVC.swift in Sources */,
 				8ADB1E2928CE35BA00962616 /* PlayerExtendedControlModul.swift in Sources */,
 				8ADB1DEB28C8C54E00962616 /* RadioView.swift in Sources */,
 				8A3F35DA28C4B149006B3892 /* AppleMusicAppSwiftUIApp.swift in Sources */,

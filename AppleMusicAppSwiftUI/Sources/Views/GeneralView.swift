@@ -49,7 +49,6 @@ struct GeneralView: View {
 
                 NavigationView {
                 SearchView()
-//                    UIKView()
                       .navigationTitle("Search")
                 }
                     .tabItem {
@@ -60,19 +59,14 @@ struct GeneralView: View {
                     }
 
                 NavigationView {
-
-                                    UIKView()
-
+                    SearchViewByUIVC()
                 }
                 .tabItem {
                     Text("Search UIKit")
-                    Image(systemName:"magnifyingglass")
+                    Image(systemName:"arrow.up.left.and.down.right.magnifyingglass")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                 }
-                
-
-
             }
         }
         .safeAreaInset(edge: .bottom) {
@@ -82,16 +76,6 @@ struct GeneralView: View {
                 .offset(y: expand ? 0 : -(Metric.playerHeight / 2) + 6)
         }
         .ignoresSafeArea(expand ? .all : .keyboard)
-    }
-}
-
-struct UIKView: UIViewControllerRepresentable {
-    func makeUIViewController(context: Context) -> UIViewController {
-        let navigationController = UINavigationController(rootViewController: SearchViewController())
-        return navigationController
-    }
-
-    func updateUIViewController(_ uiViewController: UIViewControllerType, context: Context) {
     }
 }
 

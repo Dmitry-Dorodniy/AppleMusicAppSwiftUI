@@ -10,7 +10,7 @@ import SwiftUI
 struct SearchView: View {
 
     @State private var search = ""
-    @StateObject var radio = Music()
+    @StateObject var music = Music()
     @EnvironmentObject var currentMusic: CurrentMusic
     
     let columns = Array(repeating: GridItem(.flexible(), spacing: 15), count: 2)
@@ -23,7 +23,7 @@ struct SearchView: View {
                     .padding(.bottom, 0)
 
                 LazyVGrid(columns: columns, spacing: 15) {
-                    ForEach(radio.stantions.filter({ $0.title.lowercased().contains(search.lowercased())
+                    ForEach(music.stantions.filter({ $0.title.lowercased().contains(search.lowercased())
                         || search.isEmpty }), id: \.self) { cover in
                             NavigationLink {
                                 SearchDetailView(selectedRadio: cover)
@@ -50,7 +50,7 @@ struct SearchView: View {
                     .padding(.bottom, 0)
 
                 LazyVGrid(columns: columns, spacing: 15) {
-                    ForEach(radio.albums.filter({ $0.title.lowercased().contains(search.lowercased())
+                    ForEach(music.albums.filter({ $0.title.lowercased().contains(search.lowercased())
                         || search.isEmpty }), id: \.self) { cover in
                             Button {
                                 currentMusic.track = cover.title
