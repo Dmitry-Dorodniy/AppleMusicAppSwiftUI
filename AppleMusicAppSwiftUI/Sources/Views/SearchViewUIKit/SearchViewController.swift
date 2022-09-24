@@ -11,6 +11,9 @@ class SearchViewController: UIViewController {
 
     var music = Music().albums
 
+    typealias DataSource = UICollectionViewDiffableDataSource<Section, TrackModel>
+    typealias Snapshot = NSDiffableDataSourceSnapshot<Section, TrackModel>
+
     private lazy var searchController: UISearchController = {
         let search = UISearchController(searchResultsController: nil)
         search.obscuresBackgroundDuringPresentation = false
@@ -150,4 +153,8 @@ struct CanvasProvider: PreviewProvider {
                                     context: UIViewControllerRepresentableContext<CanvasProvider.ContainerView>) {
         }
     }
+}
+
+enum Section {
+    case main
 }
