@@ -11,7 +11,7 @@ struct SearchDetailView: View {
 
     @StateObject var radio = Music()
     
-    var selectedRadio: RadioModel
+    var selectedRadio: TrackModel
 
     let rows = [GridItem(.flexible())]
     let columns = Array(repeating: GridItem(.flexible(), spacing: 15), count: 2)
@@ -23,7 +23,7 @@ struct SearchDetailView: View {
                     LazyHGrid(rows: rows) {
                         RadioRectangleStantionView(cover: selectedRadio)
 
-                        ForEach(radio.stantions) { cover in
+                        ForEach(radio.albums) { cover in
                             if cover != selectedRadio {
                                 RadioRectangleStantionView(cover: cover)
                             }
@@ -74,7 +74,7 @@ struct SearchDetailView: View {
 
 struct SearchDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchDetailView(selectedRadio: RadioModel.covers[0])
+        SearchDetailView(selectedRadio: TrackModel.covers[0])
     }
 }
 

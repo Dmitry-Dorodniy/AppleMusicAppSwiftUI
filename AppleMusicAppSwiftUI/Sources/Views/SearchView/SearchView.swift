@@ -23,12 +23,12 @@ struct SearchView: View {
                     .padding(.bottom, 0)
 
                 LazyVGrid(columns: columns, spacing: 15) {
-                    ForEach(music.stantions.filter({ $0.title.lowercased().contains(search.lowercased())
-                        || search.isEmpty }), id: \.self) { cover in
+                    ForEach(music.albums.filter({ $0.artist == "radio" &&
+                        ($0.title.lowercased().contains(search.lowercased())
+                        || search.isEmpty) }), id: \.self) { cover in
                             NavigationLink {
                                 SearchDetailView(selectedRadio: cover)
                                     .navigationTitle(cover.title)
-
                             } label: {
                                 ZStack(alignment: .bottomLeading) {
                                     Image(cover.imageSqr)
@@ -50,8 +50,9 @@ struct SearchView: View {
                     .padding(.bottom, 0)
 
                 LazyVGrid(columns: columns, spacing: 15) {
-                    ForEach(music.albums.filter({ $0.title.lowercased().contains(search.lowercased())
-                        || search.isEmpty }), id: \.self) { cover in
+                    ForEach(music.albums.filter({ $0.artist != "radio" &&
+                        ($0.title.lowercased().contains(search.lowercased())
+                        || search.isEmpty) }), id: \.self) { cover in
                             Button {
                                 currentMusic.track = cover.title
                                 currentMusic.coverImage = cover.imageSqr
