@@ -28,7 +28,7 @@ class SearchViewController: UIViewController {
         return search
     }()
 
-    private lazy var collectionView: UICollectionView = {
+    private lazy var collectionViewSearch: UICollectionView = {
         let collection = UICollectionView(frame: .zero,
                                           collectionViewLayout: createLayout())
         collection.translatesAutoresizingMaskIntoConstraints = false
@@ -56,10 +56,10 @@ class SearchViewController: UIViewController {
 //        collectionView.frame = view.bounds
 
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Metric.playerHeight)
+            collectionViewSearch.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionViewSearch.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionViewSearch.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionViewSearch.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Metric.playerHeight)
         ])
     }
 
@@ -69,7 +69,7 @@ class SearchViewController: UIViewController {
         navigationItem.searchController = searchController
         navigationItem.title = "Search"
         navigationController?.navigationBar.prefersLargeTitles = true
-        view.addSubview(collectionView)
+        view.addSubview(collectionViewSearch)
     }
 
     // MARK: - Setup Collection View
@@ -116,7 +116,7 @@ class SearchViewController: UIViewController {
     }
 
     func makeDataSource() -> DataSource {
-        let dataSource = DataSource(collectionView: collectionView,
+        let dataSource = DataSource(collectionView: collectionViewSearch,
                                     cellProvider: { (collectionView, indexPath, music) -> UICollectionViewCell? in
             let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: SearchCollectionViewCell.identifier,
@@ -195,7 +195,7 @@ extension SearchViewController: UISearchResultsUpdating, UISearchControllerDeleg
         //        } else {
         //            music = Music().albums
         //        }
-        //        collectionView.reloadData()
+        //        collectionViewSearch.reloadData()
         applySnapshot()
     }
 
