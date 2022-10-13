@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A07E5F628F860D7009A4E12 /* SectionHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07E5F528F860D7009A4E12 /* SectionHeaderReusableView.swift */; };
 		8A1802B428C67D4F0081EB51 /* PlayerCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1802B328C67D4F0081EB51 /* PlayerCoverView.swift */; };
 		8A1802B728C67F100081EB51 /* PlayerButtonImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1802B628C67F100081EB51 /* PlayerButtonImage.swift */; };
 		8A2405BA28D768850029A0D4 /* SearchViewByUIVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2405B928D768850029A0D4 /* SearchViewByUIVC.swift */; };
@@ -34,6 +35,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A07E5F528F860D7009A4E12 /* SectionHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderReusableView.swift; sourceTree = "<group>"; };
 		8A1802B328C67D4F0081EB51 /* PlayerCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCoverView.swift; sourceTree = "<group>"; };
 		8A1802B628C67F100081EB51 /* PlayerButtonImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerButtonImage.swift; sourceTree = "<group>"; };
 		8A2405B928D768850029A0D4 /* SearchViewByUIVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewByUIVC.swift; sourceTree = "<group>"; };
@@ -72,6 +74,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A07E5F428F86073009A4E12 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8A07E5F528F860D7009A4E12 /* SectionHeaderReusableView.swift */,
+				8A24B18E28E5F56C00F40B19 /* Section.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8A1802B028C67BBA0081EB51 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -185,9 +196,9 @@
 		8ABF7A5B28D37A9E0070FFD6 /* SearchViewUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				8A07E5F428F86073009A4E12 /* Model */,
 				8A2405B928D768850029A0D4 /* SearchViewByUIVC.swift */,
 				8ABF7A5C28D37AEF0070FFD6 /* SearchViewController.swift */,
-				8A24B18E28E5F56C00F40B19 /* Section.swift */,
 				8ABF7A5E28D4363A0070FFD6 /* SearchCollectionViewCell.swift */,
 			);
 			path = SearchViewUIKit;
@@ -294,6 +305,7 @@
 				8A92ACB728C52ABE00ADE1B2 /* ListCell.swift in Sources */,
 				8ADB1DF028C8FDE900962616 /* RadioSingleStationView.swift in Sources */,
 				8A2405BA28D768850029A0D4 /* SearchViewByUIVC.swift in Sources */,
+				8A07E5F628F860D7009A4E12 /* SectionHeaderReusableView.swift in Sources */,
 				8ADB1E2928CE35BA00962616 /* PlayerExtendedControlModul.swift in Sources */,
 				8ADB1DEB28C8C54E00962616 /* RadioView.swift in Sources */,
 				8A3F35DA28C4B149006B3892 /* AppleMusicAppSwiftUIApp.swift in Sources */,

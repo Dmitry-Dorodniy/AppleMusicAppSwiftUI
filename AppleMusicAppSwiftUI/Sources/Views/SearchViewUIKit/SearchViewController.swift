@@ -36,6 +36,9 @@ class SearchViewController: UIViewController {
         //        collection.dataSource = self
         collection.register(SearchCollectionViewCell.self,
                             forCellWithReuseIdentifier: SearchCollectionViewCell.identifier)
+        collection.register(SectionHeaderReusableView.self,
+                            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                            withReuseIdentifier: SectionHeaderReusableView.identifier)
         return collection
     }()
 
@@ -89,22 +92,41 @@ class SearchViewController: UIViewController {
                                       bottom: Metric.playerHeight,
                                       trailing: 8)
 
+//        section header
+        let headerFooterSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .estimated(20)
+        )
+        let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerFooterSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        section.boundarySupplementaryItems = [sectionHeader]
+
         let layout = UICollectionViewCompositionalLayout(section: section)
         return layout
     }
 
     func makeDataSource() -> DataSource {
-        let dataSource = DataSource(
-            collectionView: collectionView,
-            cellProvider: { (collectionView, indexPath, music) ->
-                UICollectionViewCell? in
-                // 2
-                let cell = collectionView.dequeueReusableCell(
-                    withReuseIdentifier: SearchCollectionViewCell.identifier,
-                    for: indexPath) as? SearchCollectionViewCell
-                cell?.configure(with: music)
-                return cell
-            })
+        let dataSource = DataSource(collectionView: collectionView,
+                                    cellProvider: { (collectionView, indexPath, music) -> UICollectionViewCell? in
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: SearchCollectionViewCell.identifier,
+                for: indexPath) as? SearchCollectionViewCell
+            cell?.configure(with: music)
+            return cell
+        })
+
+        dataSource.supplementaryViewProvider = {collectionView, kind, indexPath in
+            guard kind == UICollectionView.elementKindSectionHeader else { return nil }
+            let view = collectionView.dequeueReusableSupplementaryView( ofKind: kind,
+                                                                        withReuseIdentifier: SectionHeaderReusableView.identifier,
+                                                                        for: indexPath) as? SectionHeaderReusableView
+            let section = self.dataSource.snapshot().sectionIdentifiers[indexPath.section]
+            view?.titleLabel.text = section.title
+            return view
+        }
         return dataSource
     }
 
