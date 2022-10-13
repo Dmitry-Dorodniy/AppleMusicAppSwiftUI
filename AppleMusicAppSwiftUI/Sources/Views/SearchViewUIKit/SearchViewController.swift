@@ -53,7 +53,14 @@ class SearchViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
-        collectionView.frame = view.bounds
+//        collectionView.frame = view.bounds
+
+        NSLayoutConstraint.activate([
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -Metric.playerHeight)
+        ])
     }
 
     // MARK: - Setup private functions
@@ -89,7 +96,7 @@ class SearchViewController: UIViewController {
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = .init(top: 0,
                                       leading: 8,
-                                      bottom: Metric.playerHeight,
+                                      bottom: 8,
                                       trailing: 8)
 
 //        section header
