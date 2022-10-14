@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RadioView: View {
 
-    @State private var radio = Music().stantions
+    @State private var radio = Music().albums
     let rows = [GridItem(.flexible())]
     let columns = [GridItem(.flexible())]
     

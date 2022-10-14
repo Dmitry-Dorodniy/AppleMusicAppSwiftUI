@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RadioRectangleStantionView: View {
 
-    let cover: RadioModel
+    let cover: TrackModel
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -40,6 +40,6 @@ struct RadioRectangleStantionView: View {
 
 struct RadioRectangleStantionView_Previews: PreviewProvider {
     static var previews: some View {
-        RadioRectangleStantionView(cover: RadioModel.covers[0]).previewLayout(.sizeThatFits)
+        RadioRectangleStantionView(cover: TrackModel.covers[0]).previewLayout(.sizeThatFits)
     }
 }

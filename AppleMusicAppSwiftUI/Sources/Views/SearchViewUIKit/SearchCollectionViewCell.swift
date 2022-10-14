@@ -45,11 +45,10 @@ class SearchCollectionViewCell: UICollectionViewCell {
     private func setupLayout() {
         imageView.frame = contentView.bounds
 
-        NSLayoutConstraint.activate([
-            trackTitle.leadingAnchor.constraint(equalTo: imageView.leadingAnchor,
-                                                constant: 10),
-            trackTitle.bottomAnchor.constraint(equalTo: imageView.bottomAnchor,
-                                               constant: -10)
+        NSLayoutConstraint.activate([trackTitle.leadingAnchor.constraint(equalTo: imageView.leadingAnchor,
+                                                                         constant: 10),
+                                     trackTitle.bottomAnchor.constraint(equalTo: imageView.bottomAnchor,
+                                                                        constant: -10)
         ])
     }
 
@@ -57,6 +56,5 @@ class SearchCollectionViewCell: UICollectionViewCell {
         super.layoutSubviews()
         
         setupLayout()
-
     }
 }

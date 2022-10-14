@@ -9,7 +9,7 @@ import SwiftUI
 
 struct RadioSingleStationView: View {
     
-    let cover: RadioModel
+    let cover: TrackModel
 
     var body: some View {
         HStack {
@@ -36,6 +36,6 @@ struct RadioSingleStationView: View {
 
 struct RadioSingleStationView_Previews: PreviewProvider {
     static var previews: some View {
-        RadioSingleStationView(cover: RadioModel.covers[0]).previewLayout(.sizeThatFits)
+        RadioSingleStationView(cover: TrackModel.covers[0]).previewLayout(.sizeThatFits)
     }
 }

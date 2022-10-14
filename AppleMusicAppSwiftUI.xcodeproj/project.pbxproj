@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A07E5F628F860D7009A4E12 /* SectionHeaderReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07E5F528F860D7009A4E12 /* SectionHeaderReusableView.swift */; };
 		8A1802B428C67D4F0081EB51 /* PlayerCoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1802B328C67D4F0081EB51 /* PlayerCoverView.swift */; };
 		8A1802B728C67F100081EB51 /* PlayerButtonImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1802B628C67F100081EB51 /* PlayerButtonImage.swift */; };
 		8A2405BA28D768850029A0D4 /* SearchViewByUIVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2405B928D768850029A0D4 /* SearchViewByUIVC.swift */; };
+		8A24B18F28E5F56C00F40B19 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A24B18E28E5F56C00F40B19 /* Section.swift */; };
 		8A3F35DA28C4B149006B3892 /* AppleMusicAppSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3F35D928C4B149006B3892 /* AppleMusicAppSwiftUIApp.swift */; };
 		8A3F35DC28C4B149006B3892 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3F35DB28C4B149006B3892 /* LibraryView.swift */; };
 		8A3F35DE28C4B14A006B3892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A3F35DD28C4B14A006B3892 /* Assets.xcassets */; };
@@ -33,9 +35,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A07E5F528F860D7009A4E12 /* SectionHeaderReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderReusableView.swift; sourceTree = "<group>"; };
 		8A1802B328C67D4F0081EB51 /* PlayerCoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCoverView.swift; sourceTree = "<group>"; };
 		8A1802B628C67F100081EB51 /* PlayerButtonImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerButtonImage.swift; sourceTree = "<group>"; };
 		8A2405B928D768850029A0D4 /* SearchViewByUIVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewByUIVC.swift; sourceTree = "<group>"; };
+		8A24B18E28E5F56C00F40B19 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		8A3F35D628C4B149006B3892 /* MusicAppSUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MusicAppSUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A3F35D928C4B149006B3892 /* AppleMusicAppSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicAppSwiftUIApp.swift; sourceTree = "<group>"; };
 		8A3F35DB28C4B149006B3892 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
@@ -70,6 +74,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8A07E5F428F86073009A4E12 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8A07E5F528F860D7009A4E12 /* SectionHeaderReusableView.swift */,
+				8A24B18E28E5F56C00F40B19 /* Section.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		8A1802B028C67BBA0081EB51 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +196,7 @@
 		8ABF7A5B28D37A9E0070FFD6 /* SearchViewUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				8A07E5F428F86073009A4E12 /* Model */,
 				8A2405B928D768850029A0D4 /* SearchViewByUIVC.swift */,
 				8ABF7A5C28D37AEF0070FFD6 /* SearchViewController.swift */,
 				8ABF7A5E28D4363A0070FFD6 /* SearchCollectionViewCell.swift */,
@@ -291,12 +305,14 @@
 				8A92ACB728C52ABE00ADE1B2 /* ListCell.swift in Sources */,
 				8ADB1DF028C8FDE900962616 /* RadioSingleStationView.swift in Sources */,
 				8A2405BA28D768850029A0D4 /* SearchViewByUIVC.swift in Sources */,
+				8A07E5F628F860D7009A4E12 /* SectionHeaderReusableView.swift in Sources */,
 				8ADB1E2928CE35BA00962616 /* PlayerExtendedControlModul.swift in Sources */,
 				8ADB1DEB28C8C54E00962616 /* RadioView.swift in Sources */,
 				8A3F35DA28C4B149006B3892 /* AppleMusicAppSwiftUIApp.swift in Sources */,
 				8A3F35EE28C4F8D3006B3892 /* PlayerView.swift in Sources */,
 				8A92ACAF28C516AB00ADE1B2 /* ListModel.swift in Sources */,
 				8ADB1E2528CBA1EF00962616 /* SearchView.swift in Sources */,
+				8A24B18F28E5F56C00F40B19 /* Section.swift in Sources */,
 				8ABF7A5F28D4363A0070FFD6 /* SearchCollectionViewCell.swift in Sources */,
 				8ADB1E2C28CE3CD500962616 /* PlayerExtendedBottomButtons.swift in Sources */,
 				8A1802B428C67D4F0081EB51 /* PlayerCoverView.swift in Sources */,
@@ -438,8 +454,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -448,6 +463,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dorodniy.AppleMusicAppSwiftUI;
 				PRODUCT_NAME = MusicAppSUI;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -469,8 +487,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -479,6 +496,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dorodniy.AppleMusicAppSwiftUI;
 				PRODUCT_NAME = MusicAppSUI;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
