@@ -9,7 +9,6 @@ import UIKit
 
 class SearchViewController: UIViewController {
 
-    //    var music = Music().albums
     private var musicSections = Section.allSections
 
     typealias DataSource = UICollectionViewDiffableDataSource<Section, TrackModel>
@@ -33,7 +32,6 @@ class SearchViewController: UIViewController {
                                           collectionViewLayout: createLayout())
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.delegate = self
-        //        collection.dataSource = self
         collection.register(SearchCollectionViewCell.self,
                             forCellWithReuseIdentifier: SearchCollectionViewCell.identifier)
         collection.register(SectionHeaderReusableView.self,
@@ -52,8 +50,6 @@ class SearchViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-
-//        collectionView.frame = view.bounds
 
         NSLayoutConstraint.activate([
             collectionViewSearch.topAnchor.constraint(equalTo: view.topAnchor),
@@ -140,9 +136,7 @@ class SearchViewController: UIViewController {
 
     func applySnapshot(animatingDifferences: Bool = true) {
         var snapshot = Snapshot()
-        //        snapshot.appendSections([.main])
         snapshot.appendSections(musicSections)
-        //        snapshot.appendItems(music)
         musicSections.forEach { section in
             snapshot.appendItems(section.items, toSection: section)
         }
@@ -154,23 +148,8 @@ class SearchViewController: UIViewController {
 
 extension SearchViewController: UICollectionViewDelegate {
 
-    //    func collectionView(_ collectionView: UICollectionView,
-    //                        numberOfItemsInSection section: Int) -> Int {
-    //        return music.count
-    //    }
-    //
-    //    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    //        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell",
-    //                                                            for: indexPath) as? SearchCollectionViewCell else
-    //                                                            { return UICollectionViewCell()}
-    //        cell.configure(with: music[indexPath.row])
-    //        return cell
-    //    }
-
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-
-        //        let cover = music[indexPath.row]
         guard let cover = dataSource.itemIdentifier(for: indexPath) else {
             return
         }
@@ -186,16 +165,6 @@ extension SearchViewController: UICollectionViewDelegate {
 extension SearchViewController: UISearchResultsUpdating, UISearchControllerDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         musicSections = filteredSections(for: searchController.searchBar.text)
-        //        if ((searchController.searchBar.text?.isEmpty) == false) {
-        //            guard let text = searchController.searchBar.text else { return }
-        //            let tracks = music.filter { track in
-        //                track.title.lowercased().contains(text.lowercased())
-        //            }
-        //            music = tracks
-        //        } else {
-        //            music = Music().albums
-        //        }
-        //        collectionViewSearch.reloadData()
         applySnapshot()
     }
 
@@ -203,7 +172,6 @@ extension SearchViewController: UISearchResultsUpdating, UISearchControllerDeleg
         let musicSections = Section.allSections
 
         guard let query = queryOrNil, !query.isEmpty else { return musicSections }
-
         //// Выводит всю секцию в элементах которой, найден подходящий текст
         //        let matches = musicSections.filter { item in
         //            item.items.filter { $0.title.lowercased().contains(query.lowercased()) }.count != 0
@@ -238,8 +206,3 @@ struct CanvasProvider: PreviewProvider {
         }
     }
 }
-
-//enum Section {
-//    case track
-//    case radio
-//}
